@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PhonePreview from '../components/PhonePreview.astro';
+---
+<Layout>
+  <Nav />
+
+  <!-- ================== HERO ================== -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag"><span class="tag-dot"></span>Private beta · iOS first</span>
+      <h1 class="display">Your business text line.<br />Built for trades.</h1>
+      <p class="lede">
+        A dedicated number for your business. Every text from a client comes in with
+        an AI-drafted reply ready to send. Quote faster, win more jobs, and keep your
+        personal phone out of it.
+      </p>
+      <div class="hero-ctas">
+        <a href="#get" class="btn btn-primary">Get the app</a>
+        <a href="#how" class="btn btn-secondary">See how it works</a>
+      </div>
+      <div class="hero-note">No contracts · Cancel anytime · Beta pricing locked in</div>
+    </div>
+
+    <div class="preview">
+      <PhonePreview />
+    </div>
+  </section>
+
+  <!-- ================== PROBLEM ================== -->
+  <section class="alt" id="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The problem</div>
+        <h2 class="heading-xl">You're not losing jobs because you're bad at your trade.<br />You're losing them because you can't text back fast enough.</h2>
+        <p class="lede">Every contractor we've talked to has the same three stories.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="num">01</div>
+          <h3>The three-hour reply</h3>
+          <p>You see the text after the job wraps up. By then she's already hired the other guy who answered in ten minutes.</p>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <h3>The dropped follow-up</h3>
+          <p>You quoted the deck rebuild two weeks ago and never heard back. You meant to check in. You didn't. That's revenue on the table.</p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h3>The 10pm text</h3>
+          <p>Clients have your cell. Your partner is sick of it. There's no off switch between "the business" and "you".</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== HOW IT WORKS ================== -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How it works</div>
+        <h2 class="heading-xl">Sign up in five minutes. Win jobs the same day.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>Get your business number</h3>
+          <p>Pick an area code, we buy the number, your clients text it. Your personal phone never rings for work again.</p>
+        </div>
+        <div class="step">
+          <h3>Teach the AI your voice</h3>
+          <p>Two minutes of setup — your trade, service area, how you talk. The AI learns to sound like you, not like a robot.</p>
+        </div>
+        <div class="step">
+          <h3>Send in thirty seconds</h3>
+          <p>Every inbound text arrives with a ready-to-send draft. Tap edit or tap send. You're out the door before the competition wakes up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== FEATURES ================== -->
+  <section class="ink-section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What's inside</div>
+        <h2 class="heading-xl">A texting app that works like a second pair of hands.</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="num">AI Draft</div>
+          <h3>A reply ready on every text</h3>
+          <p>Claude reads the thread and drafts a response that sounds like you sent it. You review, tweak, send. Never a blank page.</p>
+        </div>
+        <div class="card">
+          <div class="num">Follow-ups</div>
+          <h3>Stale quotes, caught.</h3>
+          <p>When a client hasn't replied in 48 hours, we draft a check-in for you. The difference between "good contractor" and "booked out for weeks".</p>
+        </div>
+        <div class="card">
+          <div class="num">Summaries</div>
+          <h3>Long threads at a glance</h3>
+          <p>Two sentences that tell you who this client is, what they want, and what to do next. Scroll saved.</p>
+        </div>
+        <div class="card">
+          <div class="num">Your voice</div>
+          <h3>Trained on how you talk</h3>
+          <p>Formality, length, phrases you always use, phrases you'd never use. The AI matches you — it doesn't make you sound like a chatbot.</p>
+        </div>
+        <div class="card">
+          <div class="num">Text-only line</div>
+          <h3>Calls go to a polite voicemail</h3>
+          <p>Inbound callers hear "please text this number instead." Your phone doesn't ring. Your day doesn't get interrupted.</p>
+        </div>
+        <div class="card">
+          <div class="num">Work / life</div>
+          <h3>Clean separation from day one</h3>
+          <p>Clients only have the business number. Nothing hits your personal phone. Notifications off when you want them off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== PRICING ================== -->
+  <section class="alt" id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Pricing</div>
+        <h2 class="heading-xl">Priced like a tool, not a SaaS.</h2>
+        <p class="lede">One job pays for a year. Beta pricing locks in forever.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="price-card">
+          <div class="price-name">Starter</div>
+          <div>
+            <span class="price-amount">$29</span>
+            <span class="price-period">/ mo</span>
+          </div>
+          <ul class="price-features">
+            <li>One business number</li>
+            <li>200 AI draft replies / month</li>
+            <li>Unlimited inbound SMS</li>
+            <li>iOS + Android apps</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-badge">Most popular</div>
+          <div class="price-name">Pro</div>
+          <div>
+            <span class="price-amount">$69</span>
+            <span class="price-period">/ mo</span>
+          </div>
+          <ul class="price-features">
+            <li>Everything in Starter</li>
+            <li>600 AI draft replies / month</li>
+            <li>AI conversation summaries</li>
+            <li>Smart follow-up suggestions</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Team</div>
+          <div>
+            <span class="price-amount">$229</span>
+            <span class="price-period">/ mo</span>
+          </div>
+          <ul class="price-features">
+            <li>Up to 5 contractors</li>
+            <li>2,000 AI draft replies / month</li>
+            <li>Shared inbox</li>
+            <li>Admin dashboard</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== FINAL CTA ================== -->
+  <section class="big-cta" id="get">
+    <div class="wrap">
+      <div class="eyebrow">Beta open now</div>
+      <h2 class="display">Stop losing jobs<br />to faster texters.</h2>
+      <div class="ctas">
+        <a href="mailto:hi@tradetext.app?subject=Beta%20access" class="btn btn-primary">Request beta access</a>
+        <a href="#how" class="btn btn-secondary">Read how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
