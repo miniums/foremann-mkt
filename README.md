@@ -1,6 +1,8 @@
-# tradetext-mkt
+# foremann-mkt
 
-Marketing site for [TradeText](https://github.com/miniums/tradetext). Astro, static, ~zero JS.
+Marketing site for [Foremann](https://github.com/miniums/tradetext) — the AI foreman for solo trades. Astro, static, ~zero JS.
+
+> Repo is still named `tradetext-mkt` for now — GitHub rename pending.
 
 ## Dev
 
