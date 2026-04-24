@@ -1,29 +1,44 @@
 ---
 ---
 <div class="phone" aria-hidden="true">
+
+  <!-- Contact header -->
   <div class="phone-header">
-    <div class="phone-avatar">MR</div>
+    <div class="phone-avatar">MD</div>
     <div>
-      <div class="phone-name">Maria Ruiz</div>
-      <div class="phone-sub">(415) 555-0182 · 2 min ago</div>
+      <div class="phone-name">Mike Delgado</div>
+      <div class="phone-sub">(720) 555-0247 · 4th season</div>
     </div>
   </div>
 
-  <div class="bubbles">
-    <div class="bubble bubble-in">Hey, do you do weekly lawn service? My yard is a mess after the storm.</div>
-    <div class="bubble bubble-out">Yeah I can help. How big is the yard?</div>
-    <div class="bubble bubble-in">About a quarter acre. When could you swing by?</div>
+  <!-- AI context summary -->
+  <div class="ai-summary">
+    <div class="ai-sum-head">
+      <span class="ai-dot"></span>
+      <span class="ai-label">Foremann knows this client</span>
+    </div>
+    <div class="ai-sum-body">Spring cleanup quote ($340) sent 4 days ago. Mike said he'd check with his wife — hasn't replied since. Good time to follow up.</div>
   </div>
 
+  <!-- Mid-conversation thread -->
+  <div class="bubbles">
+    <div class="bubble bubble-in">Can you also do the back hedges while you're at it?</div>
+    <div class="bubble bubble-out">Yeah, hedge trim included. New total is $340. Sending the quote now.</div>
+    <div class="bubble bubble-in">Perfect. Let me check with my wife and I'll get back to you.</div>
+    <div class="thread-gap">4 days · no reply</div>
+  </div>
+
+  <!-- AI proactive follow-up -->
   <div class="ai-card">
     <div class="ai-head">
       <span class="ai-dot"></span>
-      <span class="ai-label">AI Draft Reply</span>
+      <span class="ai-label">Suggested Follow-up</span>
     </div>
-    <div class="ai-body">Could probably make it Thursday morning. Want me to swing by around 9?</div>
+    <div class="ai-body">Hey Mike — just checking in on that spring cleanup quote. Happy to lock in a date whenever you're ready.</div>
     <div class="ai-actions">
       <button class="ai-btn ai-btn-edit">Edit</button>
       <button class="ai-btn ai-btn-send">Send</button>
     </div>
   </div>
+
 </div>

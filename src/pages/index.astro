@@ -92,36 +92,109 @@ import PhonePreview from '../components/PhonePreview.astro';
       </div>
 
       <div class="grid">
-        <div class="card">
+
+        <!-- AI Draft -->
+        <div class="card feat-card">
+          <div class="feat-visual">
+            <div class="fv-bubble fv-in">Any chance you can do next Tuesday?</div>
+            <div class="fv-ai">
+              <span class="fv-ai-label">AI Draft</span>
+              <span class="fv-ai-msg">Tuesday works — I can be there by 8. Does that work?</span>
+            </div>
+          </div>
           <div class="num">AI Draft</div>
           <h3>A reply ready on every text</h3>
           <p>Your foreman reads the thread and drafts a response that sounds like you sent it. You review, tweak, send. Never a blank page.</p>
         </div>
-        <div class="card">
+
+        <!-- Follow-ups -->
+        <div class="card feat-card">
+          <div class="feat-visual">
+            <div class="fv-bubble fv-out">Sent you the quote — let me know!</div>
+            <div class="fv-gap">3 days · no reply</div>
+            <div class="fv-ai">
+              <span class="fv-ai-label">Follow-up ready</span>
+              <span class="fv-ai-msg">Hey — just wanted to check in on that quote. Any questions?</span>
+            </div>
+          </div>
           <div class="num">Follow-ups</div>
           <h3>Stale quotes, caught.</h3>
           <p>When a client hasn't replied in 48 hours, your foreman drafts a check-in. The difference between "good contractor" and "booked out for weeks".</p>
         </div>
-        <div class="card">
+
+        <!-- Summaries -->
+        <div class="card feat-card">
+          <div class="feat-visual">
+            <div class="fv-sum-label">Client Summary</div>
+            <div class="fv-sum-row">
+              <span class="fv-sum-name">Tom Braxton</span>
+              <span class="fv-sum-meta">14 jobs · $5,200</span>
+            </div>
+            <div class="fv-sum-text">Wants gutters cleaned before rain season. Quoted $180. Waiting on his schedule — prefers weekend mornings.</div>
+          </div>
           <div class="num">Summaries</div>
           <h3>Long threads at a glance</h3>
           <p>Two sentences that tell you who this client is, what they want, and what to do next. Scroll saved, context kept.</p>
         </div>
-        <div class="card">
+
+        <!-- Your voice -->
+        <div class="card feat-card">
+          <div class="feat-visual">
+            <div class="fv-compare">
+              <div>
+                <div class="fv-compare-label">Generic AI</div>
+                <div class="fv-bubble fv-out fv-dull">Hello, I will be available on Friday afternoon.</div>
+              </div>
+              <div>
+                <div class="fv-compare-label active">Your foreman</div>
+                <div class="fv-bubble fv-out">Friday works — I'll be there around 2. See you then 👍</div>
+              </div>
+            </div>
+          </div>
           <div class="num">Your voice</div>
           <h3>Trained on how you talk</h3>
           <p>Formality, length, phrases you always use, phrases you'd never use. Your foreman matches you — it doesn't make you sound like a robot.</p>
         </div>
-        <div class="card">
+
+        <!-- Text-only line -->
+        <div class="card feat-card">
+          <div class="feat-visual fv-call">
+            <div class="fv-call-icon">📵</div>
+            <div class="fv-call-num">(415) 555-0182 · calling...</div>
+            <div class="fv-call-redirect">"Please text this number instead — we'll get back to you shortly."</div>
+            <div class="fv-call-badge">Auto-redirected</div>
+          </div>
           <div class="num">Text-only line</div>
-          <h3>Calls go to a polite voicemail</h3>
+          <h3>Calls go to a polite redirect</h3>
           <p>Inbound callers hear "please text this number instead." Your phone doesn't ring. Your day doesn't get interrupted. Smart call handling coming next.</p>
         </div>
-        <div class="card">
+
+        <!-- Work / life -->
+        <div class="card feat-card">
+          <div class="feat-visual" style="justify-content:center;gap:10px;">
+            <div class="fv-line">
+              <div class="fv-line-icon">💼</div>
+              <div class="fv-line-info">
+                <div class="fv-line-label">Business line</div>
+                <div class="fv-line-num">(720) 555-0191</div>
+              </div>
+              <div class="fv-line-badge on">Active</div>
+            </div>
+            <div class="fv-divider"></div>
+            <div class="fv-line">
+              <div class="fv-line-icon">🔒</div>
+              <div class="fv-line-info">
+                <div class="fv-line-label">Personal number</div>
+                <div class="fv-line-num">Never shared</div>
+              </div>
+              <div class="fv-line-badge">Private</div>
+            </div>
+          </div>
           <div class="num">Work / life</div>
           <h3>Clean separation from day one</h3>
           <p>Clients only have the business number. Nothing hits your personal phone. Notifications off when you want them off.</p>
         </div>
+
       </div>
     </div>
   </section>
