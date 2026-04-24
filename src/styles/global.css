@@ -634,13 +634,18 @@ footer .foot-links a:hover { color: var(--text-primary); }
   padding: 6px 0 8px;
 }
 
-/* ---------- Feature card mini mockups ---------- */
+/* ---------- Feature card mini mockups ----------
+   All colours use color-mix(currentColor …) so they flip correctly when the
+   ink-section inverts in dark mode (bone bg → dark mode has light bg).
+   currentColor inside .ink-section = var(--bone) which is light in light-mode
+   and dark in dark-mode — giving correct contrast either way.
+--------------------------------------------------------- */
 
 .feat-card { display: flex; flex-direction: column; }
 
 .feat-visual {
-  background: rgba(244, 240, 232, 0.06);
-  border: 1px solid rgba(244, 240, 232, 0.1);
+  background: color-mix(in oklab, currentColor 7%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 12%, transparent);
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 16px;
@@ -659,18 +664,18 @@ footer .foot-links a:hover { color: var(--text-primary); }
   max-width: 88%;
 }
 .fv-in {
-  background: rgba(244, 240, 232, 0.12);
-  color: rgba(244, 240, 232, 0.85);
+  background: color-mix(in oklab, currentColor 14%, transparent);
+  color: color-mix(in oklab, currentColor 85%, transparent);
   border-bottom-left-radius: 3px;
   align-self: flex-start;
 }
 .fv-out {
-  background: rgba(244, 240, 232, 0.22);
-  color: rgba(244, 240, 232, 0.92);
+  background: color-mix(in oklab, currentColor 24%, transparent);
+  color: color-mix(in oklab, currentColor 92%, transparent);
   border-bottom-right-radius: 3px;
   align-self: flex-end;
 }
-.fv-dull { opacity: 0.45; }
+.fv-dull { opacity: 0.4; }
 
 /* mini AI card */
 .fv-ai {
@@ -693,7 +698,7 @@ footer .foot-links a:hover { color: var(--text-primary); }
 .fv-ai-msg {
   font-size: 12px;
   line-height: 1.4;
-  color: rgba(244, 240, 232, 0.85);
+  color: color-mix(in oklab, currentColor 85%, transparent);
 }
 
 /* mini time gap */
@@ -704,7 +709,7 @@ footer .foot-links a:hover { color: var(--text-primary); }
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(244, 240, 232, 0.28);
+  color: color-mix(in oklab, currentColor 30%, transparent);
   padding: 2px 0;
 }
 
@@ -727,18 +732,18 @@ footer .foot-links a:hover { color: var(--text-primary); }
 .fv-sum-name {
   font-weight: 700;
   font-size: 13px;
-  color: rgba(244, 240, 232, 0.9);
+  color: currentColor;
 }
 .fv-sum-meta {
   font-family: var(--font-mono);
   font-size: 9px;
-  color: rgba(244, 240, 232, 0.4);
+  color: color-mix(in oklab, currentColor 42%, transparent);
   letter-spacing: 0.1em;
 }
 .fv-sum-text {
   font-size: 11.5px;
   line-height: 1.45;
-  color: rgba(244, 240, 232, 0.6);
+  color: color-mix(in oklab, currentColor 62%, transparent);
 }
 
 /* voice compare */
@@ -753,7 +758,7 @@ footer .foot-links a:hover { color: var(--text-primary); }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(244, 240, 232, 0.35);
+  color: color-mix(in oklab, currentColor 36%, transparent);
   margin-bottom: 3px;
 }
 .fv-compare-label.active { color: var(--rust); }
@@ -775,13 +780,13 @@ footer .foot-links a:hover { color: var(--text-primary); }
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
-  color: rgba(244, 240, 232, 0.75);
+  color: color-mix(in oklab, currentColor 76%, transparent);
   letter-spacing: 0.06em;
 }
 .fv-call-redirect {
   font-size: 11px;
   line-height: 1.4;
-  color: rgba(244, 240, 232, 0.45);
+  color: color-mix(in oklab, currentColor 48%, transparent);
   font-style: italic;
 }
 .fv-call-badge {
@@ -817,14 +822,14 @@ footer .foot-links a:hover { color: var(--text-primary); }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(244, 240, 232, 0.35);
+  color: color-mix(in oklab, currentColor 36%, transparent);
   line-height: 1;
   margin-bottom: 2px;
 }
 .fv-line-num {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(244, 240, 232, 0.8);
+  color: color-mix(in oklab, currentColor 80%, transparent);
   line-height: 1;
 }
 .fv-line-badge {
@@ -835,8 +840,8 @@ footer .foot-links a:hover { color: var(--text-primary); }
   text-transform: uppercase;
   padding: 3px 7px;
   border-radius: 20px;
-  background: rgba(244, 240, 232, 0.08);
-  color: rgba(244, 240, 232, 0.35);
+  background: color-mix(in oklab, currentColor 9%, transparent);
+  color: color-mix(in oklab, currentColor 36%, transparent);
   flex-shrink: 0;
 }
 .fv-line-badge.on {
@@ -846,7 +851,7 @@ footer .foot-links a:hover { color: var(--text-primary); }
 }
 .fv-divider {
   height: 1px;
-  background: rgba(244, 240, 232, 0.08);
+  background: color-mix(in oklab, currentColor 9%, transparent);
   margin: 4px 0;
 }
 
