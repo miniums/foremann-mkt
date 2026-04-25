@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Privacy Policy — Foremann" description="How Foremann collects, uses, and protects the data that flows through your business line.">
+  <Nav />
+
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="eyebrow">Legal</div>
+      <h1 class="display">Privacy Policy</h1>
+      <p class="lede">
+        Foremann is a business SMS tool. Every message your clients send, and every reply
+        your foreman drafts, is data we're trusted with. This page explains what we collect,
+        why we collect it, and what you can do about it.
+      </p>
+      <div class="legal-meta">Effective: April 24, 2026 · Last updated: April 24, 2026</div>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap legal-doc">
+
+      <h2>1. Who we are</h2>
+      <p>
+        "Foremann," "we," "us," and "our" refer to the company operating the Foremann
+        product — a mobile and web service that provisions a dedicated business phone
+        number for tradespeople and drafts reply suggestions for inbound text messages.
+        If you're a solo plumber, landscaper, electrician, or other contractor using
+        Foremann, you're the "contractor" or "user." The people who text your business
+        number (your customers) are "clients" in this policy.
+      </p>
+
+      <h2>2. What we collect</h2>
+
+      <h3>2.1 Information you give us as a contractor</h3>
+      <ul>
+        <li><strong>Account details:</strong> name, email, personal phone number, time zone, and authentication credentials managed through our auth provider (Supabase).</li>
+        <li><strong>Business profile:</strong> business name, trade, service area, crew size, job types you typically take or exclude, pricing notes, availability, communication style preferences, phrases to "always say" or "never say," and example messages you've written.</li>
+        <li><strong>Client records you create:</strong> the names, phone numbers, addresses, and notes you save about your customers.</li>
+        <li><strong>Billing information:</strong> your plan, subscription status, and Stripe customer identifier. We do not store your full card number; Stripe handles that.</li>
+        <li><strong>Device tokens:</strong> push notification tokens (Expo) so we can alert you when a client texts.</li>
+      </ul>
+
+      <h3>2.2 Information that flows through your business line</h3>
+      <ul>
+        <li><strong>SMS content:</strong> the full body of every inbound and outbound text message sent to or from your Foremann business number, with timestamps and delivery status.</li>
+        <li><strong>Caller phone numbers:</strong> the phone number of any client who texts or calls your business line.</li>
+        <li><strong>Voice calls:</strong> we do not record or store voice calls. Inbound calls hear a short "please text this number instead" message and are disconnected.</li>
+      </ul>
+
+      <h3>2.3 AI-generated content</h3>
+      <ul>
+        <li><strong>Draft replies, follow-ups, and summaries</strong> produced by our AI model provider (Anthropic), including token usage counts.</li>
+        <li><strong>Your interactions with those drafts:</strong> whether you accepted, edited, or dismissed them.</li>
+      </ul>
+
+      <h3>2.4 Automatically collected</h3>
+      <ul>
+        <li>Standard request logs (IP address, user agent, timestamps) captured by our hosting provider (Railway) for security and debugging.</li>
+        <li>Usage counters (messages sent, AI suggestions generated per month) so we can enforce plan limits and show you your usage.</li>
+      </ul>
+
+      <h3>2.5 Cookies and analytics</h3>
+      <ul>
+        <li><strong>Session cookies:</strong> our web app uses cookies strictly necessary to keep you logged in and maintain your session. No session cookie = you get logged out.</li>
+        <li><strong>Preference storage:</strong> we use local storage to remember in-app preferences (such as your last-viewed thread) so the app feels consistent across visits.</li>
+        <li><strong>Marketing site analytics:</strong> our public marketing site (foremann.app) uses privacy-respecting, cookieless analytics to understand aggregate traffic patterns (pages visited, referral source, general geography). We do not use Google Analytics or any analytics tool that tracks individuals across sites or builds behavioral profiles.</li>
+        <li><strong>No advertising cookies:</strong> we do not use behavioral advertising cookies, retargeting pixels, or third-party tracking scripts that follow you around the web.</li>
+      </ul>
+      <p>
+        You can control session cookies through your browser settings, but disabling them
+        will prevent you from staying logged in. Cookieless analytics cannot be blocked
+        because they don't use cookies.
+      </p>
+
+      <h2>3. How we use it</h2>
+      <p>We use the data above only to:</p>
+      <ul>
+        <li>Run the Foremann service — deliver your texts, draft your replies, sync your inbox to your phone.</li>
+        <li>Train your specific foreman to sound like you. The business profile and example messages you provide are included as context each time we generate a draft <em>for you</em>. We do <strong>not</strong> use your data to train shared or foundation models.</li>
+        <li>Bill you and prevent fraud or abuse of the system.</li>
+        <li>Send you account-related email and push notifications (usage warnings, billing receipts, critical service notices). You can disable push notifications in your device settings.</li>
+        <li>Send you optional product updates, tips, and marketing communications, but only if you have opted in. Every marketing email includes a one-click unsubscribe link. You can also opt out by emailing <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>.</li>
+        <li>Improve the product — in aggregated, de-identified form only.</li>
+        <li>Comply with legal obligations and enforce our Terms.</li>
+      </ul>
+
+      <h2>3A. Lawful basis for processing (GDPR)</h2>
+      <p>
+        If you are located in the European Economic Area (EEA) or United Kingdom, we
+        process your personal data under the following lawful bases:
+      </p>
+      <ul>
+        <li><strong>Contract performance:</strong> processing necessary to deliver the Service you signed up for — your account, your business number, SMS delivery, AI drafts, and billing.</li>
+        <li><strong>Legitimate interests:</strong> security monitoring, fraud prevention, product analytics (aggregated/de-identified), and enforcing our Terms — where these interests are not overridden by your rights.</li>
+        <li><strong>Legal obligation:</strong> retaining billing records and cooperating with valid legal requests.</li>
+        <li><strong>Consent:</strong> optional marketing communications. You may withdraw consent at any time without affecting the lawfulness of prior processing.</li>
+      </ul>
+      <p>
+        If you have questions about our legal bases or wish to object to any processing
+        based on legitimate interests, email <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>.
+      </p>
+
+      <h2>4. The AI model provider</h2>
+      <p>
+        Draft replies, summaries, and follow-up suggestions are generated by Anthropic's
+        Claude models via the Anthropic API. To generate a draft, we send the relevant
+        conversation thread and your business profile to Anthropic as a prompt. Anthropic
+        processes the prompt, returns the draft, and — per their API terms — does not use
+        API inputs or outputs to train their models. We use prompt caching to reduce cost,
+        which means portions of your business profile may sit in Anthropic's short-lived
+        cache for a few minutes at a time.
+      </p>
+
+      <h2>5. How we share it</h2>
+      <p>We share your data only with service providers that make Foremann work, and only as needed:</p>
+      <ul>
+        <li><strong>Twilio</strong> — to send and receive SMS and to provision and manage your business phone number.</li>
+        <li><strong>Anthropic</strong> — to generate AI drafts, as described in Section 4.</li>
+        <li><strong>Supabase</strong> — our database and authentication provider; stores the data listed in Section 2.</li>
+        <li><strong>Railway</strong> — hosts our application servers.</li>
+        <li><strong>Stripe</strong> — processes subscription payments.</li>
+        <li><strong>Expo</strong> — delivers push notifications to your phone.</li>
+      </ul>
+      <p>
+        We do not sell your data. We do not share it with advertisers. We do not share it
+        with other Foremann customers.
+      </p>
+      <p>
+        We may disclose information if required by law, subpoena, or valid government
+        request, or to protect the safety, rights, or property of Foremann, our users, or
+        the public. If we ever merge with, are acquired by, or sell assets to another
+        company, your data may be transferred as part of that transaction; you'll be
+        notified before it moves.
+      </p>
+      <p>
+        <strong>Data Processing Agreements (DPA).</strong> If your business is subject to
+        the GDPR, CCPA, or similar data protection laws and you require a formal DPA with
+        Foremann, email <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>.
+        We will execute a DPA with you on reasonable, standard terms.
+      </p>
+
+      <h2>6. Your clients' data</h2>
+      <p>
+        When a client texts your Foremann business number, we store the message, their
+        phone number, and any name, address, or note you attach to their record.
+        <strong>You are the data controller for your client list</strong> — the decisions
+        about who to message, what data to collect about your customers, and how long to
+        keep it are yours. Foremann acts as a <strong>data processor</strong> on your
+        behalf: we store and process that client data only to provide you the Service,
+        not for our own purposes.
+      </p>
+      <p>
+        You are responsible for having the right to contact those clients under applicable
+        law (including the TCPA in the United States). If a client asks to be removed,
+        archive them in the app and stop messaging them; you can also delete the client
+        and their conversation from your account. If a client contacts us directly about
+        their data, we will route the request to you as the business that collected it,
+        and we will cooperate with any deletion or access request you direct us to fulfill.
+      </p>
+
+      <h2>7. Retention</h2>
+      <ul>
+        <li><strong>Active accounts:</strong> we keep your messages, client records, and business profile for as long as your account is active.</li>
+        <li><strong>Cancelled accounts:</strong> we retain your data for 90 days after cancellation so you can reactivate, then delete it (or de-identify it for aggregate analytics). This 90-day window includes your client records and conversation history.</li>
+        <li><strong>Billing records:</strong> retained for the period required by tax and accounting law (typically seven years in the U.S.).</li>
+        <li><strong>Backups:</strong> deleted data may persist in encrypted backups for up to 30 additional days before rotating out.</li>
+        <li><strong>Deletion requests:</strong> if you request deletion of your account before the 90-day window, we'll delete it within 30 days of your request, subject to our legal retention obligations for billing records.</li>
+      </ul>
+
+      <h2>8. Security</h2>
+      <p>
+        We use encryption in transit (TLS) for all traffic between your device, our
+        servers, and our subprocessors. Data at rest in Supabase is encrypted. Access to
+        production systems is restricted to a small set of employees and is
+        credential-protected. We validate Twilio webhook signatures on every inbound
+        message. No system is perfect, though — if we experience a security incident that
+        affects you, we'll notify you as required by law.
+      </p>
+
+      <h2>9. Your rights</h2>
+      <p>
+        Depending on where you live (California, Colorado, Virginia, the EU/UK, and
+        others), you may have the right to:
+      </p>
+      <ul>
+        <li>Access the personal information we hold about you.</li>
+        <li>Correct or update it.</li>
+        <li>Delete it (subject to our legal retention obligations).</li>
+        <li>Export it in a portable format.</li>
+        <li>Object to or restrict certain processing.</li>
+        <li>Withdraw consent you previously gave (including consent to marketing emails).</li>
+        <li>Opt out of any sale or sharing of your personal information (see California section below).</li>
+      </ul>
+      <p>
+        To exercise any of these rights, email <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>.
+        We'll respond within 30 days (or 45 days if we notify you of an extension). We won't
+        retaliate against you for exercising your rights. We may need to verify your identity
+        before acting on your request.
+      </p>
+      <p>
+        <strong>California residents (CCPA/CPRA):</strong> we do not "sell" or "share"
+        personal information as those terms are defined under the CCPA/CPRA, and we have
+        not done so in the preceding 12 months. We do not use sensitive personal
+        information for purposes beyond those necessary to provide the Service. The
+        categories of personal information we collect are listed in Section 2; the
+        purposes are in Section 3. You have the right to know, delete, correct, and
+        opt out. To submit a verifiable consumer request, email
+        <a href="mailto:privacy@foremann.app">privacy@foremann.app</a> or use the
+        deletion option in the app settings. We will not discriminate against you for
+        exercising these rights. California's "Shine the Light" law (Civil Code § 1798.83)
+        allows residents to request disclosure of personal information shared with third
+        parties for direct marketing purposes in the prior year; we do not share personal
+        information for direct marketing and have no disclosures to make.
+      </p>
+      <p>
+        <strong>Marketing opt-out:</strong> every marketing email we send includes a
+        one-click unsubscribe link. You can also opt out at any time by emailing
+        <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>. Opting out of
+        marketing does not affect account-essential communications (billing, security,
+        service notices).
+      </p>
+
+      <h2>10. SMS, A2P, and carrier rules</h2>
+      <p>
+        U.S. carriers require that application-to-person (A2P) messaging be registered and
+        that senders have permission to text recipients. When you use Foremann to send
+        SMS, you are the sender in the eyes of the carriers, and you agree to follow all
+        applicable rules, including the TCPA and CTIA Messaging Principles. Standard
+        message and data rates from the recipient's carrier may apply. Recipients can
+        reply <code>STOP</code> at any time to opt out; we'll block further messages from
+        your number to that recipient automatically.
+      </p>
+
+      <h2>11. Children</h2>
+      <p>
+        Foremann is a business tool and is not directed at children under 16. We do not
+        knowingly collect personal information from children. If you believe a child has
+        provided us data, email us and we'll delete it.
+      </p>
+
+      <h2>12. International users</h2>
+      <p>
+        Foremann is operated from the United States. If you're accessing the service from
+        outside the U.S., your data will be transferred to and processed in the U.S. and
+        in the regions where our subprocessors operate. By using Foremann, you consent to
+        that transfer.
+      </p>
+      <p>
+        <strong>EEA/UK users:</strong> if you are accessing the Service from the EEA or
+        United Kingdom, transfers of your personal data to the United States are covered
+        by appropriate safeguards, which may include Standard Contractual Clauses (SCCs)
+        approved by the European Commission or the UK International Data Transfer
+        Agreement. To request a copy of the applicable transfer mechanism, email
+        <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>.
+      </p>
+
+      <h2>13. Changes to this policy</h2>
+      <p>
+        We'll update this page when our practices change. If the change is material, we'll
+        notify you by email or in the app before it takes effect. The "Last updated" date
+        at the top reflects the current version.
+      </p>
+
+      <h2>14. Contact</h2>
+      <p>
+        Questions, requests, or complaints?<br />
+        Email: <a href="mailto:privacy@foremann.app">privacy@foremann.app</a><br />
+        General: <a href="mailto:hi@foremann.app">hi@foremann.app</a>
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(30px, 4vw, 50px);
+  }
+  .legal-hero .display {
+    font-size: clamp(44px, 7vw, 80px);
+    margin: 18px 0 20px;
+  }
+  .legal-hero .lede { max-width: 720px; }
+  .legal-meta {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .legal-body {
+    padding: clamp(30px, 5vw, 60px) 0 clamp(60px, 9vw, 120px);
+  }
+  .legal-doc {
+    max-width: 760px;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  .legal-doc h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(22px, 2.6vw, 28px);
+    color: var(--text-primary);
+    margin: 56px 0 14px;
+  }
+  .legal-doc h2:first-child { margin-top: 0; }
+  .legal-doc h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 28px 0 8px;
+  }
+  .legal-doc p { margin: 0 0 16px; }
+  .legal-doc ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+  }
+  .legal-doc li { margin-bottom: 8px; }
+  .legal-doc strong { color: var(--text-primary); font-weight: 700; }
+  .legal-doc a {
+    color: var(--rust);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .legal-doc a:hover { color: var(--rust-dark); }
+  .legal-doc code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--sand);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+</style>

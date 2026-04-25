@@ -1,0 +1,400 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Terms of Service — Foremann" description="The rules of the road for using Foremann — your business phone line, your AI foreman, your account.">
+  <Nav />
+
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="eyebrow">Legal</div>
+      <h1 class="display">Terms of Service</h1>
+      <p class="lede">
+        These terms cover your use of Foremann — the business phone line, the mobile app,
+        the AI drafts, and everything connected to your account. Read them. By using
+        Foremann, you agree to them.
+      </p>
+      <div class="legal-meta">Effective: April 24, 2026 · Last updated: April 24, 2026</div>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap legal-doc">
+
+      <h2>1. The agreement</h2>
+      <p>
+        These Terms of Service (the "Terms") are a contract between you and the company
+        operating Foremann ("Foremann," "we," "us"). They govern your use of the Foremann
+        website, mobile apps (iOS and Android), backend services, and any business phone
+        number we provision for you (together, the "Service"). Our <a href="/privacy">Privacy Policy</a>
+        is incorporated by reference.
+      </p>
+      <p>
+        <strong>By creating an account or using the Service, you agree to these Terms.</strong>
+        If you don't agree, don't use the Service.
+      </p>
+
+      <h2>2. Who can use Foremann</h2>
+      <p>You may use the Service only if:</p>
+      <ul>
+        <li>You are at least 18 years old and able to enter into a binding contract.</li>
+        <li>You are using the Service for a legitimate trade or contracting business in the United States.</li>
+        <li>You are not barred from using services like this under U.S. law.</li>
+      </ul>
+      <p>
+        If you're signing up on behalf of a business, you represent that you have authority
+        to bind that business to these Terms, and "you" means both you and that business.
+      </p>
+
+      <h2>3. Your account</h2>
+      <p>
+        You're responsible for everything that happens under your account: messages sent,
+        drafts accepted, clients added, charges incurred. Keep your login credentials
+        secure. Tell us immediately at <a href="mailto:hi@foremann.app">hi@foremann.app</a>
+        if you think someone else has accessed your account.
+      </p>
+
+      <h2>4. Your business phone number</h2>
+      <p>
+        When you subscribe, we provision a phone number for you through our carrier
+        partner (Twilio). You get exclusive use of that number while your subscription is
+        in good standing. A few things to know:
+      </p>
+      <ul>
+        <li>The number is licensed to you, not owned by you. We may need to change it in rare cases (e.g., a carrier reclaim or regulatory issue); we'll give you as much notice as we can.</li>
+        <li>If your subscription is cancelled or suspended for more than 30 days, we may release the number back to the carrier pool, and it may later be assigned to someone else. Port the number out before you cancel if you want to keep it.</li>
+        <li>You can request a port-out to another carrier; we'll cooperate with reasonable port requests.</li>
+        <li>You are the "sender" of every message that leaves your number. See Section 6 for the rules that come with that.</li>
+      </ul>
+
+      <h2>5. Acceptable use</h2>
+      <p>You will not use the Service to:</p>
+      <ul>
+        <li>Send spam, unsolicited commercial messages, or any messages that violate the TCPA, CAN-SPAM, state mini-TCPA laws, or the CTIA Messaging Principles.</li>
+        <li>Text anyone who has not given you prior express consent to receive messages from your business, or who has replied <code>STOP</code>.</li>
+        <li>Send content in the SHAFT categories (Sex, Hate, Alcohol, Firearms, Tobacco), cannabis, gambling, loan or debt services, or other content restricted by U.S. carriers under A2P 10DLC rules.</li>
+        <li>Send phishing, fraudulent, or misleading messages, or impersonate anyone.</li>
+        <li>Run the Service on behalf of a business you're not actually operating, or resell the Service as your own.</li>
+        <li>Reverse-engineer, scrape, or attempt to extract the AI prompts or model weights.</li>
+        <li>Use the Service to build a competing product.</li>
+        <li>Interfere with the Service — rate-limit evasion, abuse of free-trial mechanics, exploiting bugs instead of reporting them.</li>
+      </ul>
+      <p>
+        We may suspend or terminate any account that violates this section, with or
+        without notice, and we will cooperate with carrier and law-enforcement
+        investigations into abuse.
+      </p>
+
+      <h2>6. SMS and telecom compliance</h2>
+      <p>
+        Foremann is a tool for sending messages you author (or approve). When you send a
+        message through the Service, <strong>you are the sender</strong>. That means you
+        are legally responsible for:
+      </p>
+      <ul>
+        <li>Having a prior business relationship or express consent to message each recipient.</li>
+        <li>Honoring opt-outs. Replying <code>STOP</code> blocks further messages from your number automatically; it's a violation of these Terms and of law to work around it.</li>
+        <li>Identifying yourself and your business in your messages as required by law.</li>
+        <li>Complying with any carrier-imposed A2P 10DLC registration requirements. We'll help with registration, but the information you provide must be accurate.</li>
+      </ul>
+      <p>
+        Carriers may filter, delay, or block messages at their discretion; we do not
+        guarantee delivery. Message and data rates from your recipient's carrier may apply
+        to them. We may pass through regulatory fees if carriers impose them on us.
+      </p>
+
+      <h2>7. The AI drafts</h2>
+      <p>
+        Foremann's AI produces drafts, summaries, and follow-up suggestions. They are
+        <strong>suggestions, not sent messages</strong>. Nothing is sent from your number
+        until you tap send. The AI can be wrong: it can invent facts, mis-read tone,
+        misquote pricing, or suggest something inappropriate for the situation. You are
+        responsible for reviewing every draft before sending it.
+      </p>
+      <p>
+        AI output is not legal, medical, financial, or professional advice. Don't rely on
+        it for regulated communications (e.g., formal contract language, permit
+        disclosures) without your own review. You own what you send. Between you and us,
+        you own the content of the messages you author and send through the Service.
+      </p>
+      <p>
+        We do not guarantee that AI features will be available at all times, will produce
+        output of any particular quality, or will meet your specific business requirements.
+        AI availability depends on our upstream model provider; outages there may temporarily
+        disable drafts. We will restore AI features as quickly as we can when they go down.
+      </p>
+
+      <h2>8. Plans, fees, and billing</h2>
+      <ul>
+        <li><strong>Subscription:</strong> the Service is sold as a monthly subscription (Starter, Pro, Team, or other plans we may offer). Current pricing is shown on the <a href="/#pricing">pricing page</a>.</li>
+        <li><strong>Auto-renewal:</strong> your plan renews automatically each month on your billing date until you cancel. You authorize us and Stripe to charge your payment method.</li>
+        <li><strong>Usage limits:</strong> each plan includes a monthly allotment of AI draft replies. If you exceed the included amount, we may throttle AI drafts until the next cycle, or — if we offer overage billing for your plan — bill overage at the rate shown in-app. You'll see a warning before you hit the limit.</li>
+        <li><strong>Changes:</strong> we may change prices or plan features with 30 days' notice by email or in-app. Price changes take effect at your next billing cycle. Beta pricing is honored according to the terms shown when you signed up.</li>
+        <li><strong>Refunds:</strong> subscription fees are non-refundable except where required by law. If you cancel mid-cycle, you keep access until the end of the cycle and are not charged further.</li>
+        <li><strong>Taxes:</strong> prices don't include taxes, which we may collect where required.</li>
+      </ul>
+
+      <h2>9. Cancellation and suspension</h2>
+      <p>
+        You can cancel any time from the app. Cancellation takes effect at the end of your
+        current billing period. After cancellation, you lose access to the Service and
+        your business number may be released (see Section 4). We retain your data per our
+        <a href="/privacy">Privacy Policy</a>.
+      </p>
+      <p>
+        We may suspend or terminate your account if you violate these Terms, if your
+        payment fails and isn't cured within a reasonable time, or if carriers or
+        regulators require us to. For material violations — spam, fraud, safety issues —
+        we may terminate immediately.
+      </p>
+
+      <h2>10. Beta features</h2>
+      <p>
+        Some features are marked "beta," "preview," or similar. They're offered as-is, may
+        change or disappear, and may be less reliable than production features. Don't bet
+        the business on a beta feature until it graduates.
+      </p>
+
+      <h2>11. Intellectual property</h2>
+      <p>
+        Foremann, the app, the website, the branding, the prompts behind the AI drafts,
+        and the software are owned by us and our licensors. We grant you a limited,
+        non-exclusive, non-transferable license to use the Service in accordance with
+        these Terms. You may not copy, modify, distribute, sell, or create derivative works
+        of the Service or the software behind it.
+      </p>
+      <p>
+        You retain ownership of your business profile, your client list, and the messages
+        you send. You grant us a license to host, process, and display that content as
+        necessary to provide the Service to you. If you give us feedback on the product,
+        we can use that feedback without restriction.
+      </p>
+      <p>
+        <strong>DMCA.</strong> If you believe content accessible through the Service
+        infringes your copyright, send a notice to <a href="mailto:hi@foremann.app">hi@foremann.app</a>
+        with: (a) identification of the copyrighted work claimed to be infringed, (b)
+        identification of the infringing material and where it appears in the Service,
+        (c) your contact information, (d) a statement of good-faith belief that the use
+        is unauthorized, and (e) a statement, under penalty of perjury, that the information
+        in the notice is accurate and that you are authorized to act on behalf of the
+        copyright owner.
+      </p>
+
+      <h2>12. Third-party services</h2>
+      <p>
+        The Service depends on third-party subprocessors — including our SMS carrier,
+        AI model provider, database, hosting, payment processor, and notification
+        provider. Our current subprocessor list is maintained in our
+        <a href="/privacy">Privacy Policy</a>. Their terms and outages apply to their
+        piece of the stack. We are not liable for their acts, omissions, or downtime
+        beyond our reasonable control. We will work in good faith to find alternatives
+        if a critical subprocessor becomes unavailable.
+      </p>
+
+      <h2>13. Privacy</h2>
+      <p>
+        How we handle your data — and the data of the clients who text you — is described
+        in our <a href="/privacy">Privacy Policy</a>. You agree to the data practices
+        described there.
+      </p>
+
+      <h2>14. Disclaimers</h2>
+      <p>
+        THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY
+        KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+        PARTICULAR PURPOSE, NON-INFRINGEMENT, OR UNINTERRUPTED OPERATION. WE DO NOT
+        WARRANT THAT AI DRAFTS WILL BE ACCURATE, THAT MESSAGES WILL BE DELIVERED, OR THAT
+        THE SERVICE WILL MEET YOUR BUSINESS NEEDS. YOU USE THE SERVICE AT YOUR OWN RISK.
+      </p>
+
+      <h2>15. Limitation of liability</h2>
+      <p>
+        TO THE MAXIMUM EXTENT ALLOWED BY LAW, FOREMANN AND ITS OFFICERS, EMPLOYEES, AND
+        SUPPLIERS ARE NOT LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL,
+        PUNITIVE, OR EXEMPLARY DAMAGES — INCLUDING LOST PROFITS, LOST JOBS, LOST DATA, OR
+        DAMAGE TO REPUTATION — ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.
+      </p>
+      <p>
+        OUR TOTAL LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATED TO THESE TERMS OR THE
+        SERVICE IS LIMITED TO THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE TWELVE
+        MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS.
+      </p>
+      <p>
+        Some jurisdictions don't allow the exclusion or limitation of certain damages; in
+        those jurisdictions, the above limitations apply to the maximum extent permitted.
+      </p>
+
+      <h2>16. Indemnification</h2>
+      <p>
+        You agree to defend, indemnify, and hold Foremann and its officers, employees,
+        and agents harmless from any claims, damages, losses, or expenses (including
+        reasonable attorneys' fees) arising out of (a) your use of the Service, (b)
+        messages you send through your business number (including any alleged violation of
+        the TCPA, state mini-TCPA laws, or carrier messaging rules), (c) your violation
+        of these Terms or applicable law, or (d) your violation of any third party's
+        rights, including intellectual property rights and privacy rights. We may, at our
+        option, assume control of the defense of any claim subject to indemnification;
+        you agree to cooperate and not to settle any such claim without our prior written
+        consent.
+      </p>
+
+      <h2>17. Dispute resolution and arbitration</h2>
+
+      <h3>17.1 Informal resolution first</h3>
+      <p>
+        Before filing any formal claim, you agree to contact us at
+        <a href="mailto:hi@foremann.app">hi@foremann.app</a> and give us 30 days to try
+        to resolve the issue informally. Most concerns can be sorted out quickly this way.
+      </p>
+
+      <h3>17.2 Binding individual arbitration</h3>
+      <p>
+        If informal resolution doesn't work, <strong>any dispute, claim, or controversy
+        arising out of or relating to these Terms or the Service</strong> — except those
+        in Section 17.4 — will be resolved by binding arbitration on an individual basis.
+        The arbitration will be administered by the American Arbitration Association (AAA)
+        under its Consumer Arbitration Rules (available at adr.org). The arbitration will
+        take place in Michigan or virtually if both parties agree. The arbitrator's award
+        is final and may be entered as a judgment in any court of competent jurisdiction.
+      </p>
+
+      <h3>17.3 No class actions</h3>
+      <p>
+        <strong>You and Foremann each waive the right to bring or participate in any
+        class action, collective arbitration, or representative proceeding.</strong>
+        All disputes must be brought and resolved on an individual basis. If a court
+        finds this class action waiver unenforceable for a specific claim, that claim
+        must proceed in court — not in arbitration — and all other claims remain subject
+        to arbitration.
+      </p>
+
+      <h3>17.4 Exceptions</h3>
+      <p>Either party may:</p>
+      <ul>
+        <li>Bring an individual claim in small claims court if the claim qualifies.</li>
+        <li>Seek emergency injunctive or other equitable relief in any court of competent jurisdiction to preserve the status quo pending arbitration.</li>
+        <li>Bring an action in court to protect or enforce intellectual property rights (including our AI prompts, software, brand, or trade secrets).</li>
+      </ul>
+
+      <h3>17.5 Arbitration costs</h3>
+      <p>
+        For claims under $10,000, AAA filing fees are split equally between the parties.
+        For larger claims, standard AAA fee-shifting rules apply. Each party bears its
+        own attorneys' fees unless the arbitrator determines a claim was brought in bad
+        faith, in which case the arbitrator may award fees to the prevailing party.
+      </p>
+
+      <h3>17.6 Opt-out</h3>
+      <p>
+        You may opt out of the arbitration agreement within 30 days of first creating
+        your Foremann account by emailing <a href="mailto:hi@foremann.app">hi@foremann.app</a>
+        with the subject line "Arbitration Opt-Out." Opting out does not affect any other
+        rights or obligations under these Terms.
+      </p>
+
+      <h2>18. Governing law</h2>
+      <p>
+        These Terms are governed by the laws of the State of Michigan, without regard to
+        conflict-of-laws rules. For disputes not subject to arbitration under Section 17
+        (including the exceptions in Section 17.4), you consent to exclusive jurisdiction
+        in the state or federal courts located in Michigan.
+      </p>
+
+      <h2>19. Changes to these Terms</h2>
+      <p>
+        We may update these Terms from time to time. If a change is material, we'll notify
+        you by email or in-app at least 14 days before it takes effect. Continuing to use
+        the Service after the change takes effect means you accept the updated Terms. If
+        you don't accept, cancel your account before the effective date.
+      </p>
+
+      <h2>20. Miscellaneous</h2>
+      <ul>
+        <li><strong>Entire agreement.</strong> These Terms plus the Privacy Policy are the entire agreement between you and us about the Service, superseding any prior agreements.</li>
+        <li><strong>Severability.</strong> If any part of these Terms is found unenforceable, the rest stays in effect. If the class action waiver in Section 17.3 is found unenforceable for a particular claim, the arbitration agreement is void for that claim only.</li>
+        <li><strong>No waiver.</strong> Our failure to enforce a provision isn't a waiver of our right to enforce it later.</li>
+        <li><strong>Assignment.</strong> You may not assign these Terms without our written consent. We may assign them to an affiliate or in connection with a merger, acquisition, or sale of substantially all of our assets.</li>
+        <li><strong>Force majeure.</strong> We are not liable for any failure or delay in performance caused by circumstances beyond our reasonable control, including natural disasters, government actions, carrier network outages, subprocessor failures, or internet infrastructure disruptions. We'll make reasonable efforts to restore service and keep you informed.</li>
+        <li><strong>Electronic communications.</strong> By creating an account, you consent to receive legally required notices and all other communications from us electronically (by email or in-app). Electronic notices satisfy any legal requirement for written notice.</li>
+        <li><strong>Export controls.</strong> You represent that you are not located in, or a resident or national of, any country subject to a U.S. government embargo, and that you are not on any U.S. government list of prohibited or restricted parties. You may not use the Service in any manner that would violate U.S. export control laws.</li>
+      </ul>
+
+      <h2>21. Contact</h2>
+      <p>
+        Questions about these Terms?<br />
+        Email: <a href="mailto:hi@foremann.app">hi@foremann.app</a>
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(30px, 4vw, 50px);
+  }
+  .legal-hero .display {
+    font-size: clamp(44px, 7vw, 80px);
+    margin: 18px 0 20px;
+  }
+  .legal-hero .lede { max-width: 720px; }
+  .legal-meta {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .legal-body {
+    padding: clamp(30px, 5vw, 60px) 0 clamp(60px, 9vw, 120px);
+  }
+  .legal-doc {
+    max-width: 760px;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  .legal-doc h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(22px, 2.6vw, 28px);
+    color: var(--text-primary);
+    margin: 56px 0 14px;
+  }
+  .legal-doc h2:first-child { margin-top: 0; }
+  .legal-doc h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 28px 0 8px;
+  }
+  .legal-doc p { margin: 0 0 16px; }
+  .legal-doc ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+  }
+  .legal-doc li { margin-bottom: 8px; }
+  .legal-doc strong { color: var(--text-primary); font-weight: 700; }
+  .legal-doc a {
+    color: var(--rust);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .legal-doc a:hover { color: var(--rust-dark); }
+  .legal-doc code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--sand);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+</style>
