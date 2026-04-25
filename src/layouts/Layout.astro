@@ -5,8 +5,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'Foremann — The AI foreman for your business.',
-  description = 'A dedicated business line that drafts every reply, catches every missed follow-up, and runs the back-and-forth so you don\'t have to. Built for solo plumbers, landscapers, electricians, and other tradespeople.'
+  title = 'Foremann — Reply faster. Win more jobs.',
+  description = 'A dedicated business phone number that drafts every reply in your voice — so the job goes to you, not whoever answered first. Built for plumbers, electricians, landscapers, HVAC techs, and tradespeople who run their own operation.'
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -17,10 +17,15 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Foremann" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#F4F0E8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

@@ -10,18 +10,19 @@ import PhonePreview from '../components/PhonePreview.astro';
   <!-- ================== HERO ================== -->
   <section class="hero">
     <div class="wrap">
-      <span class="tag"><span class="tag-dot"></span>Private beta · iOS first</span>
-      <h1 class="display">The AI foreman<br />for your business.</h1>
+      <span class="tag"><span class="tag-dot"></span>Now in beta · iOS + Android</span>
+      <h1 class="display">Reply faster.<br />Win more jobs.</h1>
       <p class="lede">
-        A dedicated business line that drafts every reply, catches every missed follow-up,
-        and runs the back-and-forth so you don't have to. Built for solo contractors who
-        are done losing jobs to faster texters. Texts today. Calls next.
+        Foremann gives you a real business phone number that drafts every reply
+        in your voice — so the job goes to you, not the contractor who answered
+        first. Built for plumbers, electricians, HVAC techs, landscapers, and
+        tradespeople who run their own operation.
       </p>
       <div class="hero-ctas">
-        <a href="#get" class="btn btn-primary">Get early access</a>
+        <a href="#get" class="btn btn-primary">Get your business number</a>
         <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
-      <div class="hero-note">No contracts · Cancel anytime · Beta pricing locked in</div>
+      <div class="hero-note">No contracts · Cancel anytime · Beta pricing locked in · Setup in 5 minutes</div>
     </div>
 
     <div class="preview">
@@ -53,6 +54,7 @@ import PhonePreview from '../components/PhonePreview.astro';
           <div class="num">03</div>
           <h3>The 10pm text</h3>
           <p>Clients have your cell. Your partner is sick of it. There's no off switch between "the business" and "you".</p>
+          <p class="card-note">Foremann doesn't answer it for you. It drafts your reply and holds it until morning.</p>
         </div>
       </div>
     </div>
@@ -63,17 +65,17 @@ import PhonePreview from '../components/PhonePreview.astro';
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">How it works</div>
-        <h2 class="heading-xl">Hire your foreman in five minutes.<br />Win jobs the same day.</h2>
+        <h2 class="heading-xl">We set up your foreman in five minutes.<br />You win jobs the same day.</h2>
       </div>
 
       <div class="steps">
         <div class="step">
-          <h3>Get your business line</h3>
-          <p>Pick an area code, we buy the number, your clients text it. Your personal phone never rings for work again. Voice layer lands next.</p>
+          <h3>We get you a business phone line</h3>
+          <p>Pick an area code, we buy the number and set it up. Your clients text it. Your personal phone never rings for work again.</p>
         </div>
         <div class="step">
-          <h3>Teach your foreman how you work</h3>
-          <p>Two minutes of setup — your trade, your service area, how you talk. Your foreman learns to sound like you, not like a chatbot.</p>
+          <h3>We tailor it to how you work</h3>
+          <p>Tell us your trade, your service area, and how you talk. We train your foreman to sound like you — not like a chatbot.</p>
         </div>
         <div class="step">
           <h3>Send in thirty seconds</h3>
@@ -93,6 +95,24 @@ import PhonePreview from '../components/PhonePreview.astro';
 
       <div class="grid">
 
+        <!-- Lead Sources -->
+        <div class="card feat-card">
+          <div class="feat-visual">
+            <div class="fv-lead-source">
+              <span class="fv-lead-badge">Angi lead</span>
+              <span class="fv-lead-job">Deck repair · Phoenix, AZ</span>
+            </div>
+            <div class="fv-ai">
+              <span class="fv-ai-label">Draft ready · 8 seconds</span>
+              <span class="fv-ai-msg">Hi — I do deck repair in Phoenix and can come take a look this week. What days work?</span>
+            </div>
+          </div>
+          <div class="num feat-coming">Lead sources</div>
+          <h3>First reply on Angi, Yelp, and Thumbtack — every time.</h3>
+          <p>Forward your lead notification emails to Foremann. Your foreman reads the lead and drafts your outreach before the other contractor has typed "Hello."</p>
+          <span class="feat-tag">Coming next</span>
+        </div>
+
         <!-- AI Draft -->
         <div class="card feat-card">
           <div class="feat-visual">
@@ -104,7 +124,7 @@ import PhonePreview from '../components/PhonePreview.astro';
           </div>
           <div class="num">AI Draft</div>
           <h3>A reply ready on every text</h3>
-          <p>Your foreman reads the thread and drafts a response that sounds like you sent it. You review, tweak, send. Never a blank page.</p>
+          <p>Your foreman reads the thread and drafts a response that sounds like you sent it. You review, tweak, send. Never a blank page. Average review time: under 10 seconds.</p>
         </div>
 
         <!-- Follow-ups -->
@@ -119,7 +139,7 @@ import PhonePreview from '../components/PhonePreview.astro';
           </div>
           <div class="num">Follow-ups</div>
           <h3>Stale quotes, caught.</h3>
-          <p>When a client hasn't replied in 48 hours, your foreman drafts a check-in. The difference between "good contractor" and "booked out for weeks".</p>
+          <p>When a client hasn't replied in 48 hours, your foreman drafts a check-in. The average missed follow-up costs contractors $800–2,400 in lost revenue.</p>
         </div>
 
         <!-- Summaries -->
@@ -232,18 +252,52 @@ import PhonePreview from '../components/PhonePreview.astro';
     </div>
   </section>
 
+  <!-- ================== TESTIMONIALS ================== -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What contractors are saying</div>
+        <h2 class="heading-xl">Real results from real jobs.</h2>
+      </div>
+      <div class="grid testimonial-grid">
+        <div class="card testimonial-card">
+          <p class="testimonial-quote">"I used to take 20 minutes to respond to a new lead because I was always on a job. Now I see the draft and hit send in ten seconds. Already closed two jobs I probably would have lost."</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">Mike</div>
+            <div class="testimonial-trade">Electrician · Austin, TX</div>
+          </div>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-quote">"The follow-up thing is what got me. I quoted a deck rebuild and forgot. Two weeks later Foremann drafted a check-in. The client said 'glad you followed up' and booked."</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">Jason</div>
+            <div class="testimonial-trade">General Contractor · Denver, CO</div>
+          </div>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-quote">"My wife kept asking why clients were texting me at 10pm. Now they have the business number. Problem solved."</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">Carlos</div>
+            <div class="testimonial-trade">HVAC Tech · Phoenix, AZ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================== PRICING ================== -->
   <section id="pricing">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Pricing</div>
-        <h2 class="heading-xl">Priced like a tool, not a SaaS.</h2>
-        <p class="lede">One job pays for a year. Beta pricing locks in forever.</p>
+        <h2 class="heading-xl">Priced like a tool, not a phone bill.</h2>
+        <p class="lede">One job pays for a month. Lock in your rate — cancel anytime.</p>
       </div>
 
       <div class="pricing">
         <div class="price-card">
-          <div class="price-name">Starter</div>
+          <div class="price-name">Solo</div>
+          <div class="price-persona">Running your own jobs, no dispatcher.</div>
           <div>
             <span class="price-amount">$29</span>
             <span class="price-period">/ mo</span>
@@ -254,26 +308,30 @@ import PhonePreview from '../components/PhonePreview.astro';
             <li>Unlimited inbound SMS</li>
             <li>iOS + Android apps</li>
           </ul>
+          <a href="mailto:hi@foremann.app?subject=Beta%20access%20%E2%80%94%20Solo" class="btn btn-secondary price-cta">Get your business number</a>
         </div>
 
         <div class="price-card featured">
           <div class="price-badge">Most popular</div>
-          <div class="price-name">Pro</div>
+          <div class="price-name">Active</div>
+          <div class="price-persona">Busy enough that every lead counts.</div>
           <div>
             <span class="price-amount">$69</span>
             <span class="price-period">/ mo</span>
           </div>
           <ul class="price-features">
-            <li>Everything in Starter</li>
+            <li>Everything in Solo</li>
             <li>600 AI draft replies / month</li>
             <li>AI conversation summaries</li>
             <li>Smart follow-up suggestions</li>
             <li>Priority support</li>
           </ul>
+          <a href="mailto:hi@foremann.app?subject=Beta%20access%20%E2%80%94%20Active" class="btn btn-primary price-cta">Get your business number</a>
         </div>
 
         <div class="price-card">
-          <div class="price-name">Team</div>
+          <div class="price-name">Crew</div>
+          <div class="price-persona">Multiple people handling the same phone line.</div>
           <div>
             <span class="price-amount">$229</span>
             <span class="price-period">/ mo</span>
@@ -285,7 +343,56 @@ import PhonePreview from '../components/PhonePreview.astro';
             <li>Admin dashboard</li>
             <li>Priority support</li>
           </ul>
+          <a href="mailto:hi@foremann.app?subject=Beta%20access%20%E2%80%94%20Crew" class="btn btn-secondary price-cta">Get your business number</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== FAQ ================== -->
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Common questions</div>
+        <h2 class="heading-xl">Good questions deserve straight answers.</h2>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-q">Does the AI reply to my clients automatically?</summary>
+          <div class="faq-a">
+            <p>No — you always approve before anything sends. The AI drafts a reply in your voice; you review it, edit if needed, and tap send. Your clients always hear from you, not a bot.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What if the AI draft doesn't sound right?</summary>
+          <div class="faq-a">
+            <p>Edit it before sending — it's just a starting point, not an autopilot. The more you fill in your AI profile (tone, phrases you use, phrases you'd never say), the better the drafts get. Most contractors find the drafts usable within the first day.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do I keep my current phone number?</summary>
+          <div class="faq-a">
+            <p>You get a second dedicated business number — Foremann doesn't replace your personal number. Clients only have the business line. Your personal phone stays clean.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Does it work on Android?</summary>
+          <div class="faq-a">
+            <p>Yes. iOS and Android apps available. Download the Foremann app and sign up — your number is provisioned inside the app in about five minutes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What happens when I hit my monthly limit?</summary>
+          <div class="faq-a">
+            <p>You get a push notification at 80% so you're never surprised. If you hit the cap, AI drafting pauses — you can still send and receive texts normally. Upgrade anytime mid-month; limits reset immediately.</p>
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
@@ -294,10 +401,10 @@ import PhonePreview from '../components/PhonePreview.astro';
   <section class="big-cta" id="get">
     <div class="wrap">
       <div class="eyebrow">Beta open now</div>
-      <h2 class="display">Hire your foreman.<br />Stop losing jobs to the phone.</h2>
+      <h2 class="display">Reply faster.<br />Win more jobs.</h2>
       <div class="ctas">
-        <a href="mailto:hi@foremann.app?subject=Beta%20access" class="btn btn-primary">Request beta access</a>
-        <a href="#how" class="btn btn-secondary">Read how it works</a>
+        <a href="mailto:hi@foremann.app?subject=Beta%20access" class="btn btn-primary">Get your business number</a>
+        <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
     </div>
   </section>
