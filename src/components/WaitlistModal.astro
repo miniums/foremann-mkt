@@ -1,0 +1,227 @@
+---
+---
+<div id="waitlist-backdrop" class="wl-backdrop" aria-hidden="true">
+  <div class="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title">
+    <button class="wl-close" id="waitlist-close" aria-label="Close">✕</button>
+
+    <div class="wl-badge">Early access</div>
+    <h2 class="wl-title" id="wl-title">Get on the waitlist.</h2>
+    <p class="wl-sub">Foremann is in beta. Drop your email and you'll be first in line — we'll reach out when your spot opens up.</p>
+
+    <form id="waitlist-form" class="wl-form" novalidate>
+      <div class="wl-field">
+        <input
+          id="wl-email"
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+          class="wl-input"
+        />
+        <button type="submit" class="btn btn-primary wl-submit">Get early access</button>
+      </div>
+      <p class="wl-error" id="wl-error" aria-live="polite"></p>
+    </form>
+
+    <div id="wl-success" class="wl-success" hidden>
+      <div class="wl-check">✓</div>
+      <p class="wl-success-msg">You're on the list. We'll be in touch soon.</p>
+    </div>
+
+    <p class="wl-fine">No spam. One email when your spot is ready.</p>
+  </div>
+</div>
+
+<style>
+.wl-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.wl-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.wl-modal {
+  background: var(--bone);
+  border-radius: 20px;
+  padding: clamp(28px, 5vw, 48px);
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  transform: translateY(12px);
+  transition: transform 0.2s ease;
+}
+.wl-backdrop.open .wl-modal {
+  transform: translateY(0);
+}
+.wl-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+.wl-close:hover { color: var(--text-primary); }
+.wl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(216,67,21,0.1);
+  border: 1px solid rgba(216,67,21,0.3);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 16px;
+}
+.wl-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+.wl-sub {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+}
+.wl-form { display: flex; flex-direction: column; gap: 8px; }
+.wl-field {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wl-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--hairline);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.wl-input:focus { border-color: var(--rust); }
+.wl-input::placeholder { color: var(--text-tertiary); }
+.wl-submit { flex-shrink: 0; }
+.wl-error {
+  font-size: 13px;
+  color: var(--rust);
+  margin: 0;
+  min-height: 18px;
+}
+.wl-success {
+  text-align: center;
+  padding: 12px 0 8px;
+}
+.wl-check {
+  font-size: 36px;
+  color: var(--rust);
+  margin-bottom: 8px;
+}
+.wl-success-msg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 0;
+}
+.wl-fine {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin: 16px 0 0;
+  text-align: center;
+}
+</style>
+
+<script>
+const backdrop = document.getElementById('waitlist-backdrop')!;
+const form = document.getElementById('waitlist-form') as HTMLFormElement;
+const errorEl = document.getElementById('wl-error')!;
+const successEl = document.getElementById('wl-success')!;
+
+function openModal() {
+  backdrop.classList.add('open');
+  backdrop.removeAttribute('aria-hidden');
+  (document.getElementById('wl-email') as HTMLInputElement)?.focus();
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  backdrop.classList.remove('open');
+  backdrop.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('waitlist-close')!.addEventListener('click', closeModal);
+backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('[data-waitlist]').forEach(el => {
+  el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+});
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorEl.textContent = '';
+  const email = (document.getElementById('wl-email') as HTMLInputElement).value.trim();
+  if (!email) { errorEl.textContent = 'Please enter your email.'; return; }
+
+  const btn = form.querySelector('.wl-submit') as HTMLButtonElement;
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+
+  try {
+    const res = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      form.hidden = true;
+      successEl.hidden = false;
+      setTimeout(closeModal, 2800);
+    } else {
+      errorEl.textContent = data.error || 'Something went wrong. Try again.';
+      btn.disabled = false;
+      btn.textContent = 'Get early access';
+    }
+  } catch {
+    errorEl.textContent = 'Network error. Try again.';
+    btn.disabled = false;
+    btn.textContent = 'Get early access';
+  }
+});
+</script>

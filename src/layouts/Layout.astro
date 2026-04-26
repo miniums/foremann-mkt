@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import WaitlistModal from '../components/WaitlistModal.astro';
 interface Props {
   title?: string;
   description?: string;
@@ -34,5 +35,6 @@ const {
   </head>
   <body>
     <slot />
+    <WaitlistModal />
   </body>
 </html>
