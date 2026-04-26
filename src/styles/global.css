@@ -232,8 +232,12 @@ button { font-family: inherit; }
   font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .nav-cta:hover { color: var(--bone); background: var(--rust); }
+@media (max-width: 640px) {
+  .nav-cta { padding: 10px 12px; font-size: 12px; letter-spacing: 0.02em; }
+}
 
 /* ---------- Hero ---------- */
 
