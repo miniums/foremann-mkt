@@ -394,7 +394,6 @@ section.ink-section .heading { color: var(--bone); }
 section.ink-section .muted { color: color-mix(in oklab, var(--bone) 65%, transparent); }
 
 .section-head {
-  max-width: 760px;
   margin-bottom: clamp(32px, 5vw, 56px);
 }
 .section-head h2 {
