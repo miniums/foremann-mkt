@@ -123,7 +123,6 @@ button { font-family: inherit; }
   font-size: clamp(17px, 1.8vw, 20px);
   line-height: 1.5;
   color: var(--text-secondary);
-  max-width: 620px;
 }
 
 /* ---------- Buttons ---------- */
@@ -245,7 +244,7 @@ button { font-family: inherit; }
   font-size: clamp(44px, 8vw, 96px);
   margin: 14px 0 20px;
 }
-.hero .lede { font-size: clamp(17px, 2vw, 22px); max-width: 640px; }
+.hero .lede { font-size: clamp(17px, 2vw, 22px); }
 .hero-ctas {
   display: flex;
   gap: 12px;
