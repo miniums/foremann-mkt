@@ -13,10 +13,9 @@ import PhonePreview from '../components/PhonePreview.astro';
       <span class="tag"><span class="tag-dot"></span>Now in beta · iOS + Android</span>
       <h1 class="display">Reply faster.<br />Win more jobs.</h1>
       <p class="lede">
-        Foremann is a business phone number that writes your reply for you,
-        in your voice. The job goes to you, not the guy who answered first.
-        Built for plumbers, electricians, HVAC techs, landscapers, and
-        anyone running their own shop.
+        Foremann is an app that gives you a business phone number with a
+        built-in AI assistant. It handles your client texts for you, so
+        you can reply in seconds and stay on the job.
       </p>
       <div class="hero-ctas">
         <a href="#" data-waitlist class="btn btn-primary">Get your business number</a>
@@ -35,7 +34,7 @@ import PhonePreview from '../components/PhonePreview.astro';
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">The problem</div>
-        <h2 class="heading-xl">You're the owner, the crew, and the foreman.<br />Something has to give. Usually it's the phone.</h2>
+        <h2 class="heading-xl">You're running the jobs, the books, and the phone.<br />Texts are the first thing to slip.</h2>
         <p class="lede">Every contractor we've talked to has the same three problems.</p>
       </div>
 
@@ -90,31 +89,15 @@ import PhonePreview from '../components/PhonePreview.astro';
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What your foreman does</div>
-        <h2 class="heading-xl">A second pair of hands that never takes a day off.</h2>
+        <h2 class="heading-xl">An assistant that never takes a day off.</h2>
       </div>
 
       <div class="grid">
 
-        <!-- Lead Sources -->
+        <!-- AI Draft Replies -->
         <div class="card feat-card">
-          <div class="feat-visual">
-            <div class="fv-lead-source">
-              <span class="fv-lead-badge">Angi lead</span>
-              <span class="fv-lead-job">Deck repair · Phoenix, AZ</span>
-            </div>
-            <div class="fv-ai">
-              <span class="fv-ai-label">Draft ready · 8 seconds</span>
-              <span class="fv-ai-msg">Hey, I do deck repair in Phoenix. Can come take a look this week. What days work?</span>
-            </div>
-          </div>
-          <div class="num feat-coming">Lead sources</div>
-          <h3>First reply on Angi, Yelp, and Thumbtack. Every time.</h3>
-          <p>Forward your lead emails to Foremann. Your foreman reads the lead and writes the first message before the other guy has typed "Hello."</p>
-          <span class="feat-tag">Coming next</span>
-        </div>
-
-        <!-- AI Draft -->
-        <div class="card feat-card">
+          <div class="num">AI Draft Replies</div>
+          <h3>A reply ready on every incoming text</h3>
           <div class="feat-visual">
             <div class="fv-bubble fv-in">Any chance you can do next Tuesday?</div>
             <div class="fv-ai">
@@ -122,13 +105,13 @@ import PhonePreview from '../components/PhonePreview.astro';
               <span class="fv-ai-msg">Tuesday works. I can be there by 8. Does that work?</span>
             </div>
           </div>
-          <div class="num">AI Draft</div>
-          <h3>A reply ready on every text</h3>
-          <p>Your foreman reads the thread and writes a response that sounds like you sent it. You review, tweak, hit send. Most contractors are out in under ten seconds.</p>
+          <p>When a client texts, your foreman reads the thread and writes a response that sounds like you sent it. Review, tweak, hit send. Most contractors are out in under ten seconds.</p>
         </div>
 
-        <!-- Follow-ups -->
+        <!-- Smart Follow-ups -->
         <div class="card feat-card">
+          <div class="num">Smart Follow-ups</div>
+          <h3>Stale quotes get a nudge</h3>
           <div class="feat-visual">
             <div class="fv-bubble fv-out">Sent you the quote, let me know!</div>
             <div class="fv-gap">3 days · no reply</div>
@@ -137,13 +120,13 @@ import PhonePreview from '../components/PhonePreview.astro';
               <span class="fv-ai-msg">Hey, wanted to check in on that quote. Any questions?</span>
             </div>
           </div>
-          <div class="num">Follow-ups</div>
-          <h3>Quotes don't go cold.</h3>
-          <p>When a client hasn't replied in a couple days, your foreman writes a check-in. One missed follow-up can be the difference between a paid week and a slow one.</p>
+          <p>When you sent a message and the client hasn't written back in a couple of days, your foreman writes a check-in for you to send. One missed follow-up is the difference between a paid week and a slow one.</p>
         </div>
 
-        <!-- Summaries -->
+        <!-- AI Summaries -->
         <div class="card feat-card">
+          <div class="num">AI Summaries</div>
+          <h3>Long threads at a glance</h3>
           <div class="feat-visual">
             <div class="fv-sum-label">Client Summary</div>
             <div class="fv-sum-row">
@@ -152,13 +135,13 @@ import PhonePreview from '../components/PhonePreview.astro';
             </div>
             <div class="fv-sum-text">Wants gutters cleaned before rain season. Quoted $180. Waiting on his schedule. Prefers weekend mornings.</div>
           </div>
-          <div class="num">Summaries</div>
-          <h3>Long threads at a glance</h3>
-          <p>Two sentences that tell you who the client is, what they want, and what to do next. No more scrolling back to remember.</p>
+          <p>Two sentences that tell you who the client is, what they want, and what to do next. No more scrolling back through the thread to remember.</p>
         </div>
 
-        <!-- Your voice -->
+        <!-- Your Voice -->
         <div class="card feat-card">
+          <div class="num">Your Voice</div>
+          <h3>Trained on how you actually talk</h3>
           <div class="feat-visual">
             <div class="fv-compare">
               <div>
@@ -171,26 +154,44 @@ import PhonePreview from '../components/PhonePreview.astro';
               </div>
             </div>
           </div>
-          <div class="num">Your voice</div>
-          <h3>Trained on how you talk</h3>
-          <p>Formality, length, phrases you always use, phrases you'd never use. Your foreman matches you. Doesn't make you sound like a robot.</p>
+          <p>How long your messages are. The phrases you always use. The ones you'd never use. Your foreman matches you, instead of sounding like a robot.</p>
+        </div>
+
+        <!-- Lead Capture -->
+        <div class="card feat-card">
+          <div class="num">Lead Capture</div>
+          <h3>Reply first on Angi, Yelp, and Thumbtack</h3>
+          <div class="feat-visual">
+            <div class="fv-lead-source">
+              <span class="fv-lead-badge">New Angi lead</span>
+              <span class="fv-lead-job">Deck repair · Phoenix, AZ</span>
+            </div>
+            <div class="fv-ai">
+              <span class="fv-ai-label">Draft ready · 8 seconds</span>
+              <span class="fv-ai-msg">Hey, I do deck repair in Phoenix. Can come take a look this week. What days work?</span>
+            </div>
+          </div>
+          <p>When a new lead comes in from Angi, Yelp, or Thumbtack, Foremann writes the first message in seconds. The fastest reply almost always wins the job.</p>
+          <span class="feat-tag">Coming next</span>
         </div>
 
         <!-- Text-only line -->
         <div class="card feat-card">
+          <div class="num">Text-Only Line</div>
+          <h3>Callers get told to text instead</h3>
           <div class="feat-visual fv-call">
             <div class="fv-call-icon">📵</div>
             <div class="fv-call-num">(415) 555-0182 · calling...</div>
             <div class="fv-call-redirect">"Please text this number instead. We'll get back to you shortly."</div>
             <div class="fv-call-badge">Auto-redirected</div>
           </div>
-          <div class="num">Text-only line</div>
-          <h3>Callers get told to text instead</h3>
           <p>Anyone who calls hears "please text this number instead." Your phone doesn't ring. Your day doesn't get interrupted. Smart call handling coming next.</p>
         </div>
 
-        <!-- Work / life -->
+        <!-- Work / Life -->
         <div class="card feat-card">
+          <div class="num">Work / Life</div>
+          <h3>Clean separation from day one</h3>
           <div class="feat-visual" style="justify-content:center;gap:10px;">
             <div class="fv-line">
               <div class="fv-line-icon">💼</div>
@@ -210,8 +211,6 @@ import PhonePreview from '../components/PhonePreview.astro';
               <div class="fv-line-badge">Private</div>
             </div>
           </div>
-          <div class="num">Work / life</div>
-          <h3>Clean separation from day one</h3>
           <p>Clients only have the business number. Nothing hits your personal phone. Notifications off when you want them off.</p>
         </div>
 
@@ -304,7 +303,7 @@ import PhonePreview from '../components/PhonePreview.astro';
           </div>
           <ul class="price-features">
             <li>One business number</li>
-            <li>200 AI draft replies / month</li>
+            <li>200 AI replies to incoming texts / month</li>
             <li>Unlimited inbound SMS</li>
             <li>iOS + Android apps</li>
           </ul>
@@ -321,9 +320,9 @@ import PhonePreview from '../components/PhonePreview.astro';
           </div>
           <ul class="price-features">
             <li>Everything in Solo</li>
-            <li>600 AI draft replies / month</li>
-            <li>AI conversation summaries</li>
-            <li>Smart follow-up suggestions</li>
+            <li>600 AI replies to incoming texts / month</li>
+            <li>Auto follow-ups on stale quotes</li>
+            <li>AI summaries of long threads</li>
             <li>Priority support</li>
           </ul>
           <a href="#" data-waitlist class="btn btn-primary price-cta">Get your business number</a>
@@ -338,9 +337,9 @@ import PhonePreview from '../components/PhonePreview.astro';
           </div>
           <ul class="price-features">
             <li>Up to 5 contractors</li>
-            <li>2,000 AI draft replies / month</li>
-            <li>Shared inbox</li>
-            <li>Admin dashboard</li>
+            <li>2,000 AI replies to incoming texts / month</li>
+            <li>Auto follow-ups on stale quotes</li>
+            <li>Shared inbox &amp; admin dashboard</li>
             <li>Priority support</li>
           </ul>
           <a href="#" data-waitlist class="btn btn-secondary price-cta">Get your business number</a>

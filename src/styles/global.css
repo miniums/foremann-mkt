@@ -656,7 +656,7 @@ footer .foot-links a:hover { color: var(--text-primary); }
   border: 1px solid color-mix(in oklab, currentColor 12%, transparent);
   border-radius: 12px;
   padding: 12px;
-  margin-bottom: 16px;
+  margin: 14px 0 16px;
   display: flex;
   flex-direction: column;
   gap: 7px;
