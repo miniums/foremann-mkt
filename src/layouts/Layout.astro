@@ -32,7 +32,7 @@ const {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script type="application/ld+json" set:html={JSON.stringify({
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Foremann",
@@ -45,8 +45,8 @@ const {
       },
       "offers": [
         { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Pro", "price": "69", "priceCurrency": "USD", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Team", "price": "229", "priceCurrency": "USD", "billingDuration": "P1M" }
+        { "@type": "Offer", "name": "Pro", "price": "79", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Crew add-on", "price": "19", "priceCurrency": "USD", "billingDuration": "P1M", "description": "Per-seat add-on to Pro" }
       ]
     })} />
   </head>

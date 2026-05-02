@@ -146,8 +146,8 @@ import PhonePreview from '../components/PhonePreview.astro';
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Pricing</div>
-        <h2 class="heading-xl">Priced like a tool, not a phone bill.</h2>
-        <p class="lede">One job pays for a month. Lock in your rate. Cancel anytime.</p>
+        <h2 class="heading-xl">One job pays for a year.<br />Not just a month.</h2>
+        <p class="lede">No setup fees. No per-message fees. Cancel anytime.</p>
       </div>
 
       <div class="pricing">
@@ -158,6 +158,7 @@ import PhonePreview from '../components/PhonePreview.astro';
             <span class="price-amount">$29</span>
             <span class="price-period">/ mo</span>
           </div>
+          <div class="price-annual">or $290 / year — save $58</div>
           <ul class="price-features">
             <li>One business number</li>
             <li>200 AI replies to incoming texts / month</li>
@@ -174,33 +175,38 @@ import PhonePreview from '../components/PhonePreview.astro';
           <div class="price-name">Pro</div>
           <div class="price-persona">Busy enough that every lead counts.</div>
           <div>
-            <span class="price-amount">$69</span>
+            <span class="price-amount">$79</span>
             <span class="price-period">/ mo</span>
           </div>
+          <div class="price-annual">or $790 / year — save $158</div>
           <ul class="price-features">
             <li>Everything in Starter</li>
             <li>600 AI replies to incoming texts / month</li>
             <li>Priority support</li>
+            <li>Lead-source integrations as they ship</li>
           </ul>
           <a href="#" data-waitlist class="btn btn-primary price-cta">Get your business number</a>
         </div>
 
         <div class="price-card">
-          <div class="price-name">Team</div>
-          <div class="price-persona">Multiple guys on the same phone line.</div>
+          <div class="price-name">Crew</div>
+          <div class="price-persona">Add a partner, spouse, or dispatcher.</div>
           <div>
-            <span class="price-amount">$229</span>
-            <span class="price-period">/ mo</span>
+            <span class="price-amount">+$19</span>
+            <span class="price-period">/ seat / mo</span>
           </div>
+          <div class="price-annual">Add-on to your Pro plan</div>
           <ul class="price-features">
-            <li>Everything in Pro</li>
-            <li>Up to 5 contractors</li>
-            <li>2,000 AI replies to incoming texts / month</li>
-            <li>Shared inbox &amp; admin dashboard</li>
+            <li>Each teammate gets their own login</li>
+            <li>Reply on the same business number</li>
+            <li>Shared draft history &amp; client view</li>
+            <li>Add or remove seats anytime</li>
           </ul>
-          <a href="#" data-waitlist class="btn btn-secondary price-cta">Get your business number</a>
+          <a href="#" data-waitlist class="btn btn-secondary price-cta">Get started</a>
         </div>
       </div>
+
+      <div class="pricing-foot">Beta pricing locked in for life · No contracts · Cancel anytime</div>
     </div>
   </section>
 
@@ -299,7 +305,7 @@ import PhonePreview from '../components/PhonePreview.astro';
 
       </div>
 
-      <script type="application/ld+json" set:html={JSON.stringify({
+      <script is:inline type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
