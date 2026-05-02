@@ -6,8 +6,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'Foremann · Reply faster. Win more jobs.',
-  description = 'A business phone number that writes your reply for you, in your voice. The job goes to you, not the guy who answered first. Built for plumbers, electricians, landscapers, HVAC techs, and anyone running their own shop.'
+  title = 'Foremann · The text comes in. The reply is already written.',
+  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $29/mo, beta open.'
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -32,6 +32,23 @@ const {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Foremann",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "description": description,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Tradespeople, plumbers, electricians, landscapers, HVAC technicians, general contractors"
+      },
+      "offers": [
+        { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Pro", "price": "79", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Crew add-on", "price": "19", "priceCurrency": "USD", "billingDuration": "P1M", "description": "Per-seat add-on to Pro" }
+      ]
+    })} />
   </head>
   <body>
     <slot />

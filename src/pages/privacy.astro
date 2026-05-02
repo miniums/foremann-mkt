@@ -15,7 +15,7 @@ import Footer from '../components/Footer.astro';
         your foreman drafts, is data we're trusted with. This page explains what we collect,
         why we collect it, and what you can do about it.
       </p>
-      <div class="legal-meta">Effective: April 24, 2026 · Last updated: April 24, 2026</div>
+      <div class="legal-meta">Effective: April 24, 2026 · Last updated: April 30, 2026</div>
     </div>
   </section>
 
@@ -223,15 +223,51 @@ import Footer from '../components/Footer.astro';
         service notices).
       </p>
 
-      <h2>10. SMS, A2P, and carrier rules</h2>
+      <h2>10. SMS / text message program</h2>
       <p>
-        U.S. carriers require that application-to-person (A2P) messaging be registered and
-        that senders have permission to text recipients. When you use Foremann to send
-        SMS, you are the sender in the eyes of the carriers, and you agree to follow all
-        applicable rules, including the TCPA and CTIA Messaging Principles. Standard
-        message and data rates from the recipient's carrier may apply. Recipients can
-        reply <code>STOP</code> at any time to opt out; we'll block further messages from
-        your number to that recipient automatically.
+        Foremann is a B2B SMS tool. Messages are sent and received between your business
+        and your own clients using your dedicated Foremann phone number. The terms below
+        apply to messages sent through Foremann.
+      </p>
+      <p>
+        <strong>Phone numbers and mobile information.</strong> Mobile phone numbers and
+        SMS-related personal information — including those of clients who text your
+        business number — will not be shared with third parties or affiliates for
+        marketing or promotional purposes. The only parties we share this information with
+        are the subprocessors listed in Section 5 (notably Twilio for SMS delivery and
+        Supabase for storage), and only as necessary to provide the Service.
+      </p>
+      <p>
+        <strong>Message frequency.</strong> Message frequency varies and depends on
+        conversation volume between you and your clients. Foremann does not send marketing
+        or promotional texts; messages are conversational and operational only (replies,
+        follow-ups, scheduling, review requests).
+      </p>
+      <p>
+        <strong>Message and data rates.</strong> Standard message and data rates from your
+        mobile carrier may apply to recipients.
+      </p>
+      <p>
+        <strong>Help.</strong> Recipients can reply <code>HELP</code> or <code>INFO</code>
+        at any time to receive: "Reply STOP to unsubscribe. Msg &amp; data rates may apply."
+      </p>
+      <p>
+        <strong>Opt out.</strong> Recipients can reply <code>STOP</code>,
+        <code>STOPALL</code>, <code>UNSUBSCRIBE</code>, <code>CANCEL</code>,
+        <code>END</code>, <code>QUIT</code>, <code>REVOKE</code>, <code>OPTOUT</code>, or
+        <code>OPT-OUT</code> at any time to opt out. They'll receive a confirmation:
+        "You're unsubscribed and won't get more texts. Reply START to opt back in." After
+        opt-out, the recipient will not receive any further messages from that business
+        number unless they reply <code>START</code> to re-subscribe. STOP is enforced at
+        the platform level — individual contractors using Foremann cannot bypass or
+        disable opt-out handling.
+      </p>
+      <p>
+        <strong>Sender responsibility.</strong> When you (the contractor) use Foremann to
+        send SMS, U.S. carriers treat you as the sender. You are responsible for following
+        all applicable rules, including the TCPA, state mini-TCPA laws, the CTIA Messaging
+        Principles &amp; Best Practices, and A2P 10DLC carrier requirements. Foremann's
+        infrastructure is registered for A2P 10DLC and supports compliant operation.
       </p>
 
       <h2>11. Children</h2>
