@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro';
         intended as evidence for carriers, The Campaign Registry (TCR), and
         any compliance reviewer auditing our A2P 10DLC campaign.
       </p>
-      <div class="legal-meta">Last updated: May 5, 2026</div>
+      <div class="legal-meta">Last updated: May 6, 2026</div>
     </div>
   </section>
 
@@ -36,6 +36,32 @@ import Footer from '../components/Footer.astro';
         not automated bulk sends, marketing, or promotional traffic.
       </p>
 
+      <h2>Message types</h2>
+      <p>
+        Outbound SMS sent through Foremann falls under the <strong>Customer Care</strong>
+        use case and includes only:
+      </p>
+      <ul>
+        <li>Appointment confirmations and reminders</li>
+        <li>Quote delivery and quote follow-ups</li>
+        <li>Job status updates ("on the way," "running late," "job complete")</li>
+        <li>Post-job thank-yous and review requests for the contractor's own customers</li>
+        <li>Direct replies to inbound customer messages</li>
+      </ul>
+      <p>
+        Foremann does <strong>not</strong> send promotional or marketing messages,
+        affiliate or third-party offers, or bulk/broadcast messages to non-customers.
+        Each message is sent by the contractor to a recipient with whom they have a
+        pre-existing service relationship.
+      </p>
+
+      <h2>Sample messages</h2>
+      <ul>
+        <li>"Hi {'{customer}'}, this is {'{business_name}'} confirming we'll be out tomorrow at 9am for the {'{trade}'} work. Text us if anything changes."</li>
+        <li>"Hey {'{customer}'}, following up on the {'{trade}'} quote we sent over. Any questions or want to schedule? Reply STOP to opt out."</li>
+        <li>"Thanks for choosing {'{business_name}'} — if you have a minute we'd appreciate a quick review: {'{review_link}'}. Reply STOP to opt out."</li>
+      </ul>
+
       <h2>How consent is captured</h2>
       <p>
         Foremann supports two opt-in paths. Both produce a verifiable record
@@ -47,8 +73,10 @@ import Footer from '../components/Footer.astro';
         The trade business publishes their Foremann number on invoices,
         business cards, signage, vehicle wraps, and their website. When a
         homeowner texts that number first, the inbound message itself
-        establishes consent for the contractor to reply. No additional
-        opt-in step is required.
+        establishes consent for the contractor to reply and to follow up
+        on the same service conversation. <code>STOP</code> is honored at
+        any point and ends all further outbound messages, regardless of
+        prior inbound activity.
       </p>
 
       <h3>Path 2 — In-app consent attestation (manual contact add)</h3>
@@ -59,7 +87,16 @@ import Footer from '../components/Footer.astro';
         attestation box (unchecked by default) that reads:
       </p>
       <p>
-        <strong>"I confirm this contact has agreed to receive text messages from my business."</strong>
+        <strong>"I confirm this contact has given me their phone number and agreed to receive SMS related to their request. Msg &amp; data rates may apply. They can reply STOP to opt out."</strong>
+      </p>
+      <p>
+        Before checking this box, contractors are instructed to disclose to
+        the customer (verbally or in writing) that the contractor's business
+        will text them about their service request, that message and data
+        rates may apply, that message frequency varies, and that they can
+        reply <code>STOP</code> at any time to opt out or <code>HELP</code>
+        for help. The attestation box is the contractor's record that this
+        disclosure occurred.
       </p>
       <p>
         The "Save Client" action is blocked until the box is checked. When
@@ -83,7 +120,7 @@ import Footer from '../components/Footer.astro';
       <figure class="evidence-figure">
         <img
           src="/consent-evidence-screenshot.png"
-          alt="Foremann mobile app — Add Client screen with required SMS consent attestation checkbox reading 'I confirm this contact has agreed to receive text messages from my business.'"
+          alt="Foremann mobile app — Add Client screen with required SMS consent attestation checkbox reading 'I confirm this contact has given me their phone number and agreed to receive SMS related to their request. Msg & data rates may apply. They can reply STOP to opt out.'"
           loading="lazy"
         />
         <figcaption>
@@ -109,17 +146,22 @@ import Footer from '../components/Footer.astro';
       <h2>Disclosures on first message</h2>
       <p>
         The first outbound message Foremann sends to a new recipient from a
-        contractor's number includes the disclosure
-        "Reply STOP to opt out." Subsequent conversational messages do not
-        repeat the disclosure, consistent with CTIA Messaging Principles &amp;
-        Best Practices for ongoing 1:1 business communication.
+        contractor's business number identifies the sender by business name
+        and includes the disclosure "Reply STOP to opt out, HELP for help.
+        Msg &amp; data rates may apply." Subsequent conversational messages
+        do not repeat the disclosure, consistent with CTIA Messaging
+        Principles &amp; Best Practices for ongoing 1:1 business communication.
+        <code>STOP</code> state is stored at the platform level keyed by
+        (business number, recipient phone) and persists across contractor
+        account changes.
       </p>
 
       <h2>Data handling</h2>
       <p>
-        Mobile phone numbers and SMS-related personal information are not
-        shared with third parties or affiliates for marketing or promotional
-        purposes. Full details are in our
+        No mobile information will be shared with third parties or affiliates
+        for marketing or promotional purposes. All other categories exclude
+        text messaging originator opt-in data and consent; this information
+        will not be shared with any third parties. Full details are in our
         <a href="/privacy">Privacy Policy</a> and
         <a href="/terms">Terms of Service</a>.
       </p>
