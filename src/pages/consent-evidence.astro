@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="SMS Consent Evidence — Foremann"
+  description="How Foremann captures end-user consent before any SMS is sent through a contractor's business number."
+>
+  <Nav />
+
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="eyebrow">A2P 10DLC Compliance</div>
+      <h1 class="display">SMS Consent Evidence</h1>
+      <p class="lede">
+        This page documents how Foremann captures end-user consent before any
+        SMS is sent through a contractor's dedicated business number. It is
+        intended as evidence for carriers, The Campaign Registry (TCR), and
+        any compliance reviewer auditing our A2P 10DLC campaign.
+      </p>
+      <div class="legal-meta">Last updated: May 5, 2026</div>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap legal-doc">
+
+      <h2>What Foremann is</h2>
+      <p>
+        Foremann is a B2B SaaS product that provisions a dedicated business
+        phone number for independent trade businesses (plumbers, electricians,
+        HVAC technicians, landscapers). Each contractor operates their own
+        number and uses it to communicate one-to-one with their own existing
+        customers and leads. Messages are conversational and contractor-initiated,
+        not automated bulk sends, marketing, or promotional traffic.
+      </p>
+
+      <h2>How consent is captured</h2>
+      <p>
+        Foremann supports two opt-in paths. Both produce a verifiable record
+        before any outbound SMS is sent.
+      </p>
+
+      <h3>Path 1 — Inbound-first (customer texts first)</h3>
+      <p>
+        The trade business publishes their Foremann number on invoices,
+        business cards, signage, vehicle wraps, and their website. When a
+        homeowner texts that number first, the inbound message itself
+        establishes consent for the contractor to reply. No additional
+        opt-in step is required.
+      </p>
+
+      <h3>Path 2 — In-app consent attestation (manual contact add)</h3>
+      <p>
+        When a contractor manually adds a contact inside the Foremann app —
+        typically after meeting the customer in person, on a service call,
+        or by phone — the app requires the contractor to check an
+        attestation box (unchecked by default) that reads:
+      </p>
+      <p>
+        <strong>"I confirm this contact has agreed to receive text messages from my business."</strong>
+      </p>
+      <p>
+        The "Save Client" action is blocked until the box is checked. When
+        the contact is created, Foremann records:
+      </p>
+      <ul>
+        <li>The timestamp of the attestation (<code>sms_consent_given_at</code>)</li>
+        <li>The user who attested (<code>sms_consent_given_by_user_id</code>)</li>
+        <li>The source of the consent record (<code>sms_consent_source = 'manual_add_attestation'</code>)</li>
+      </ul>
+      <p>
+        This record is retained for the life of the contact and is
+        available for audit on request.
+      </p>
+
+      <h2>Screenshot of the consent gate</h2>
+      <p>
+        The screenshot below shows the consent attestation as it appears in
+        the Foremann mobile app when a contractor manually adds a new contact.
+      </p>
+      <figure class="evidence-figure">
+        <img
+          src="/consent-evidence-screenshot.png"
+          alt="Foremann mobile app — Add Client screen with required SMS consent attestation checkbox reading 'I confirm this contact has agreed to receive text messages from my business.'"
+          loading="lazy"
+        />
+        <figcaption>
+          Foremann mobile app — Add Client screen. The consent attestation
+          checkbox is required and unchecked by default.
+        </figcaption>
+      </figure>
+
+      <h2>Opt-out handling</h2>
+      <p>
+        Recipients can reply <code>STOP</code>, <code>STOPALL</code>,
+        <code>UNSUBSCRIBE</code>, <code>CANCEL</code>, <code>END</code>,
+        <code>QUIT</code>, <code>REVOKE</code>, <code>OPTOUT</code>, or
+        <code>OPT-OUT</code> at any time. Foremann sends a confirmation
+        ("You're unsubscribed and won't get more texts. Reply START to opt back in.")
+        and blocks all further outbound messages from that business number to
+        that recipient at the platform level. Individual contractors cannot
+        bypass or disable opt-out handling. <code>HELP</code> returns:
+        "Reply STOP to unsubscribe. Msg &amp; data rates may apply."
+        <code>START</code> re-subscribes.
+      </p>
+
+      <h2>Disclosures on first message</h2>
+      <p>
+        The first outbound message Foremann sends to a new recipient from a
+        contractor's number includes the disclosure
+        "Reply STOP to opt out." Subsequent conversational messages do not
+        repeat the disclosure, consistent with CTIA Messaging Principles &amp;
+        Best Practices for ongoing 1:1 business communication.
+      </p>
+
+      <h2>Data handling</h2>
+      <p>
+        Mobile phone numbers and SMS-related personal information are not
+        shared with third parties or affiliates for marketing or promotional
+        purposes. Full details are in our
+        <a href="/privacy">Privacy Policy</a> and
+        <a href="/terms">Terms of Service</a>.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For compliance, audit, or carrier review questions, email
+        <a href="mailto:compliance@foremann.app">compliance@foremann.app</a>.
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(30px, 4vw, 50px);
+  }
+  .legal-hero .display {
+    font-size: clamp(44px, 7vw, 80px);
+    margin: 18px 0 20px;
+  }
+  .legal-hero .lede { max-width: 720px; }
+  .legal-meta {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .legal-body {
+    padding: clamp(30px, 5vw, 60px) 0 clamp(60px, 9vw, 120px);
+  }
+  .legal-doc {
+    max-width: 760px;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  .legal-doc h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 26px;
+    color: var(--text-primary);
+    margin: 40px 0 12px;
+  }
+  .legal-doc h2:first-child { margin-top: 0; }
+  .legal-doc h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 28px 0 8px;
+  }
+  .legal-doc p { margin: 0 0 16px; }
+  .legal-doc ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+  }
+  .legal-doc li { margin-bottom: 8px; }
+  .legal-doc strong { color: var(--text-primary); font-weight: 700; }
+  .legal-doc a {
+    color: var(--rust);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .legal-doc a:hover { color: var(--rust-dark); }
+  .legal-doc code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--sand);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .evidence-figure {
+    margin: 24px 0 32px;
+    padding: 0;
+  }
+  .evidence-figure img {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-faint);
+    background: var(--sand);
+  }
+  .evidence-figure figcaption {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+</style>
