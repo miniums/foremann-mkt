@@ -245,8 +245,17 @@ button { font-family: inherit; }
   padding: clamp(48px, 10vw, 112px) 0 clamp(48px, 8vw, 80px);
 }
 .hero h1 {
-  font-size: clamp(44px, 8vw, 96px);
+  font-size: clamp(40px, 8vw, 96px);
   margin: 14px 0 20px;
+  text-wrap: balance;
+  hyphens: none;
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 40px;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+  }
 }
 .hero .lede { font-size: clamp(17px, 2vw, 22px); }
 .hero-ctas {
@@ -982,7 +991,6 @@ footer .foot-links a:hover { color: var(--text-primary); }
 /* ---------- FAQ accordion ---------- */
 
 .faq-list {
-  max-width: 760px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -1025,7 +1033,6 @@ footer .foot-links a:hover { color: var(--text-primary); }
   font-size: 15.5px;
   line-height: 1.6;
   color: var(--text-secondary);
-  max-width: 640px;
 }
 
 /* ---------- Misc ---------- */
