@@ -93,11 +93,24 @@ import Footer from '../components/Footer.astro';
       <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
         Foremann is currently in private beta. Beta users provide their
-        mobile phone number to Minium LLC directly via one of two paths,
-        with explicit SMS consent captured before any outbound message
-        is sent:
+        mobile phone number to Minium LLC via one of three paths, with
+        explicit SMS consent captured before any outbound message is sent:
       </p>
       <ol>
+        <li>
+          <strong>Web waitlist form on foremann.app.</strong> The user
+          fills out the "Get early access" modal on
+          <a href="https://foremann.app">foremann.app</a>. The form
+          collects email (required) and mobile phone (optional). When a
+          phone number is provided, the user must also check an unchecked
+          SMS consent box that reads: <em>"I agree to receive SMS from
+          Minium LLC about Foremann — account confirmations, beta program
+          updates, product announcements, and support replies. Message
+          frequency varies. Msg &amp; data rates may apply. Reply HELP
+          for help, STOP to opt out."</em> The form will not record a
+          phone number unless the consent box is also checked. Consent
+          record (timestamp, source) is stored on the user record.
+        </li>
         <li>
           <strong>Direct email.</strong> The user emails
           <a href="mailto:hi@foremann.app">hi@foremann.app</a> or replies
