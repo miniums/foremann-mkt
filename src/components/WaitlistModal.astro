@@ -14,13 +14,39 @@
           id="wl-email"
           type="email"
           name="email"
-          placeholder="you@example.com"
+          placeholder="Email"
           autocomplete="email"
           required
           class="wl-input"
         />
-        <button type="submit" class="btn btn-primary wl-submit">Get early access</button>
       </div>
+      <div class="wl-field">
+        <input
+          id="wl-phone"
+          type="tel"
+          name="phone"
+          placeholder="Mobile phone (optional)"
+          autocomplete="tel"
+          class="wl-input"
+        />
+      </div>
+      <label class="wl-consent" for="wl-sms-consent">
+        <input
+          id="wl-sms-consent"
+          type="checkbox"
+          name="sms_consent"
+          class="wl-checkbox"
+        />
+        <span class="wl-consent-text">
+          I agree to receive SMS from Minium LLC about Foremann — account
+          confirmations, beta program updates, product announcements, and
+          support replies. Message frequency varies. Msg &amp; data rates may
+          apply. Reply HELP for help, STOP to opt out. See
+          <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          and <a href="/terms" target="_blank" rel="noopener">Terms</a>.
+        </span>
+      </label>
+      <button type="submit" class="btn btn-primary wl-submit">Get early access</button>
       <p class="wl-error" id="wl-error" aria-live="polite"></p>
     </form>
 
@@ -110,11 +136,35 @@
   color: var(--text-secondary);
   margin: 0 0 24px;
 }
-.wl-form { display: flex; flex-direction: column; gap: 8px; }
+.wl-form { display: flex; flex-direction: column; gap: 10px; }
 .wl-field {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+.wl-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0 8px;
+  cursor: pointer;
+}
+.wl-checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--rust);
+  cursor: pointer;
+}
+.wl-consent-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.wl-consent-text a {
+  color: var(--rust);
+  text-decoration: underline;
 }
 .wl-input {
   flex: 1;
@@ -196,7 +246,16 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   errorEl.textContent = '';
   const email = (document.getElementById('wl-email') as HTMLInputElement).value.trim();
+  const phone = (document.getElementById('wl-phone') as HTMLInputElement).value.trim();
+  const smsConsent = (document.getElementById('wl-sms-consent') as HTMLInputElement).checked;
   if (!email) { errorEl.textContent = 'Please enter your email.'; return; }
+  // If phone is provided, require explicit SMS consent. Phone alone (without
+  // checking the box) is silently ignored — Twilio/TCR rules require an
+  // affirmative opt-in tied to the number.
+  if (phone && !smsConsent) {
+    errorEl.textContent = 'To get SMS updates, please check the consent box.';
+    return;
+  }
 
   const btn = form.querySelector('.wl-submit') as HTMLButtonElement;
   btn.disabled = true;
@@ -206,7 +265,11 @@ form.addEventListener('submit', async (e) => {
     const res = await fetch('/api/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({
+        email,
+        phone: phone || undefined,
+        sms_consent: smsConsent || undefined,
+      }),
     });
     const data = await res.json();
     if (data.ok) {
