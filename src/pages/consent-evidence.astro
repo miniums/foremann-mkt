@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro';
         intended as evidence for carriers, The Campaign Registry (TCR), and
         any compliance reviewer auditing our A2P 10DLC campaign.
       </p>
-      <div class="legal-meta">Last updated: May 6, 2026</div>
+      <div class="legal-meta">Last updated: May 12, 2026</div>
     </div>
   </section>
 
@@ -28,12 +28,40 @@ import Footer from '../components/Footer.astro';
 
       <h2>What Foremann is</h2>
       <p>
-        Foremann is a B2B SaaS product that provisions a dedicated business
-        phone number for independent trade businesses (plumbers, electricians,
-        HVAC technicians, landscapers). Each contractor operates their own
-        number and uses it to communicate one-to-one with their own existing
-        customers and leads. Messages are conversational and contractor-initiated,
-        not automated bulk sends, marketing, or promotional traffic.
+        Foremann is a B2B SaaS product, operated by Minium LLC, that provisions
+        a dedicated business phone number for independent trade businesses
+        (plumbers, electricians, HVAC technicians, landscapers). Each
+        contractor operates their own number and uses it to communicate
+        one-to-one with their own existing customers and leads. Messages are
+        conversational and contractor-initiated, not automated bulk sends,
+        marketing, or promotional traffic.
+      </p>
+
+      <h2>Two SMS programs covered by this page</h2>
+      <p>
+        Minium LLC operates two distinct SMS programs through this platform.
+        Both are documented below.
+      </p>
+      <ul>
+        <li>
+          <strong>Parent program — Minium LLC to Foremann beta users.</strong>
+          1:1 messages sent from a Minium LLC-owned number to Foremann account
+          holders (currently a small group of beta users, including the founder).
+          Covers account confirmations, beta program updates, product
+          announcements, and direct support replies. Registered as a Low Volume
+          Mixed campaign under the Minium LLC brand.
+        </li>
+        <li>
+          <strong>Per-contractor program — Foremann users to their own customers.</strong>
+          1:1 messages sent from each contractor's dedicated business number
+          to that contractor's own existing customers and leads. Registered as
+          an Agents and Franchises campaign under each contractor's own brand
+          (sub-customer brand under Minium LLC's ISV registration).
+        </li>
+      </ul>
+      <p>
+        The "How consent is captured" section below details opt-in for both
+        programs.
       </p>
 
       <h2>Message types</h2>
@@ -62,10 +90,51 @@ import Footer from '../components/Footer.astro';
         <li>"Thanks for choosing {'{business_name}'} — if you have a minute we'd appreciate a quick review: {'{review_link}'}. Reply STOP to opt out."</li>
       </ul>
 
-      <h2>How consent is captured</h2>
+      <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
-        Foremann supports two opt-in paths. Both produce a verifiable record
-        before any outbound SMS is sent.
+        Foremann is currently in private beta. Beta users provide their
+        mobile phone number to Minium LLC directly via one of two paths,
+        with explicit SMS consent captured before any outbound message
+        is sent:
+      </p>
+      <ol>
+        <li>
+          <strong>Direct email.</strong> The user emails
+          <a href="mailto:hi@foremann.app">hi@foremann.app</a> or replies
+          to a beta invitation from the founder with their phone number,
+          accompanied by explicit consent to receive SMS from Minium LLC
+          about Foremann.
+        </li>
+        <li>
+          <strong>Verbal.</strong> The founder collects the number and
+          verbal consent during a phone call or in-person conversation
+          with the beta user. A written consent record is logged on the
+          user record with timestamp, source, and the opt-in language
+          presented.
+        </li>
+      </ol>
+      <p>
+        Before consenting (in either path), the user is told: (a) they
+        will receive SMS from Minium LLC about Foremann — account
+        confirmations, beta program updates, product announcements, and
+        support replies; (b) message frequency varies; (c) message and
+        data rates may apply; (d) they can reply <code>STOP</code> at
+        any time to opt out or <code>HELP</code> for help. Consent record
+        is retained for the life of the account and available for audit.
+      </p>
+      <p>
+        The first outbound message to a new recipient identifies the
+        sender as Foremann and includes "Reply STOP to opt out, HELP for
+        help. Msg &amp; data rates may apply." <code>STOP</code> state
+        is enforced at the platform level and cannot be bypassed.
+      </p>
+
+      <h2>How consent is captured — per-contractor program (contractor to their customers)</h2>
+      <p>
+        For each contractor onboarded to Foremann, Foremann supports two
+        opt-in paths. Both produce a verifiable record before any
+        outbound SMS is sent from that contractor's number to their own
+        customer.
       </p>
 
       <h3>Path 1 — Inbound-first (customer texts first)</h3>
