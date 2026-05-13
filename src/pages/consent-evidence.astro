@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="SMS Consent Evidence — Foremann"
-  description="How Foremann captures end-user consent before any SMS is sent through a contractor's business number."
+  description="How Minium LLC and Foremann capture SMS opt-in consent for the parent program and per-contractor program before any message is sent."
 >
   <Nav />
 
@@ -14,10 +14,13 @@ import Footer from '../components/Footer.astro';
       <div class="eyebrow">A2P 10DLC Compliance</div>
       <h1 class="display">SMS Consent Evidence</h1>
       <p class="lede">
-        This page documents how Foremann captures end-user consent before any
-        SMS is sent through a contractor's dedicated business number. It is
-        intended as evidence for carriers, The Campaign Registry (TCR), and
-        any compliance reviewer auditing our A2P 10DLC campaign.
+        This page documents how Minium LLC captures SMS opt-in consent for
+        the two distinct SMS programs operated through this platform —
+        the parent program (Minium LLC to Foremann beta users) and the
+        per-contractor program (each Foremann contractor to their own
+        customers). It is intended as evidence for carriers, The
+        Campaign Registry (TCR), and any compliance reviewer auditing
+        our A2P 10DLC campaigns.
       </p>
       <div class="legal-meta">Last updated: May 12, 2026</div>
     </div>
@@ -64,10 +67,36 @@ import Footer from '../components/Footer.astro';
         programs.
       </p>
 
-      <h2>Message types</h2>
+      <h2>Message types — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
-        Outbound SMS sent through Foremann falls under the <strong>Customer Care</strong>
-        use case and includes only:
+        Outbound SMS in the parent program is registered under the
+        <strong>Low Volume Mixed</strong> use case, covering both
+        Customer Care and Marketing sub-use cases. Messages include:
+      </p>
+      <ul>
+        <li>Account confirmations (e.g. business number is active and ready)</li>
+        <li>Beta program updates and onboarding tips</li>
+        <li>Product announcements (e.g. new feature shipped)</li>
+        <li>Direct replies to support requests from beta users</li>
+      </ul>
+      <p>
+        Messages in the parent program are sent 1:1 from a single
+        Minium LLC-owned number to specific beta users. No bulk sends,
+        no third-party offers, no affiliate marketing.
+      </p>
+
+      <h2>Sample messages — parent program</h2>
+      <ul>
+        <li>"Welcome to Foremann beta! Your business number is (555) 123-4567 and is ready to use. Reply HELP for help, STOP to opt out. Msg &amp; data rates may apply."</li>
+        <li>"Foremann beta: AI draft suggestions for incoming texts shipped today. Open the app to enable it. Reply STOP to opt out."</li>
+        <li>"Foremann support: replying to your question about the AI draft feature. Let me know if that helps. Reply STOP to opt out."</li>
+      </ul>
+
+      <h2>Message types — per-contractor program (contractor to their customers)</h2>
+      <p>
+        Outbound SMS in the per-contractor program is registered under
+        the <strong>Agents and Franchises</strong> use case and includes
+        only:
       </p>
       <ul>
         <li>Appointment confirmations and reminders</li>
@@ -77,17 +106,18 @@ import Footer from '../components/Footer.astro';
         <li>Direct replies to inbound customer messages</li>
       </ul>
       <p>
-        Foremann does <strong>not</strong> send promotional or marketing messages,
-        affiliate or third-party offers, or bulk/broadcast messages to non-customers.
-        Each message is sent by the contractor to a recipient with whom they have a
+        Foremann does <strong>not</strong> send promotional or marketing
+        messages on the per-contractor program, affiliate or third-party
+        offers, or bulk/broadcast messages to non-customers. Each message
+        is sent by the contractor to a recipient with whom they have a
         pre-existing service relationship.
       </p>
 
-      <h2>Sample messages</h2>
+      <h2>Sample messages — per-contractor program</h2>
       <ul>
-        <li>"Hi {'{customer}'}, this is {'{business_name}'} confirming we'll be out tomorrow at 9am for the {'{trade}'} work. Text us if anything changes."</li>
+        <li>"Hi {'{customer}'}, this is {'{business_name}'} confirming we'll be out tomorrow at 9am for the {'{trade}'} work. Text us if anything changes. Reply STOP to opt out."</li>
         <li>"Hey {'{customer}'}, following up on the {'{trade}'} quote we sent over. Any questions or want to schedule? Reply STOP to opt out."</li>
-        <li>"Thanks for choosing {'{business_name}'} — if you have a minute we'd appreciate a quick review: {'{review_link}'}. Reply STOP to opt out."</li>
+        <li>"Thanks for choosing {'{business_name}'} — if you have a minute we'd appreciate a quick review: {'{review_link}'}. Reply STOP to opt out, HELP for help."</li>
       </ul>
 
       <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
@@ -109,7 +139,8 @@ import Footer from '../components/Footer.astro';
           frequency varies. Msg &amp; data rates may apply. Reply HELP
           for help, STOP to opt out."</em> The form will not record a
           phone number unless the consent box is also checked. Consent
-          record (timestamp, source) is stored on the user record.
+          record (timestamp, source) is stored on the user record. See
+          screenshot below.
         </li>
         <li>
           <strong>Direct email.</strong> The user emails
@@ -126,8 +157,20 @@ import Footer from '../components/Footer.astro';
           presented.
         </li>
       </ol>
+      <figure class="evidence-figure">
+        <img
+          src="/parent-consent-screenshot.png"
+          alt="foremann.app waitlist modal showing email field (required), mobile phone field (optional), and an unchecked SMS consent checkbox with the disclosure text: 'I agree to receive SMS from Minium LLC about Foremann — account confirmations, beta program updates, product announcements, and support replies. Message frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to opt out.'"
+          loading="lazy"
+        />
+        <figcaption>
+          foremann.app "Get early access" waitlist modal — parent program
+          web opt-in path. SMS consent checkbox is required and unchecked
+          by default; phone is only recorded when the box is also checked.
+        </figcaption>
+      </figure>
       <p>
-        Before consenting (in either path), the user is told: (a) they
+        Before consenting (in any path), the user is told: (a) they
         will receive SMS from Minium LLC about Foremann — account
         confirmations, beta program updates, product announcements, and
         support replies; (b) message frequency varies; (c) message and
