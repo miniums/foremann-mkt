@@ -50,9 +50,10 @@ import Footer from '../components/Footer.astro';
           <strong>Parent program — Minium LLC to Foremann beta users.</strong>
           1:1 messages sent from a Minium LLC-owned number to Foremann account
           holders (currently a small group of beta users, including the founder).
-          Covers account confirmations, beta program updates, product
-          announcements, and direct support replies. Registered as a Low Volume
-          Mixed campaign under the Minium LLC brand.
+          Covers account confirmations, product update notifications affecting
+          the user's account, and direct support replies. Registered as a
+          Customer Care campaign under the Minium LLC brand. No marketing,
+          promotional, or sales messages.
         </li>
         <li>
           <strong>Per-contractor program — Foremann users to their own customers.</strong>
@@ -70,25 +71,26 @@ import Footer from '../components/Footer.astro';
       <h2>Message types — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
         Outbound SMS in the parent program is registered under the
-        <strong>Low Volume Mixed</strong> use case, covering both
-        Customer Care and Marketing sub-use cases. Messages include:
+        <strong>Customer Care</strong> use case and includes only:
       </p>
       <ul>
         <li>Account confirmations (e.g. business number is active and ready)</li>
-        <li>Beta program updates and onboarding tips</li>
-        <li>Product announcements (e.g. new feature shipped)</li>
+        <li>Onboarding tips for new Foremann account holders</li>
+        <li>Product update notifications affecting the user's account (e.g. a new feature is available in the app)</li>
         <li>Direct replies to support requests from beta users</li>
       </ul>
       <p>
         Messages in the parent program are sent 1:1 from a single
-        Minium LLC-owned number to specific beta users. No bulk sends,
-        no third-party offers, no affiliate marketing.
+        Minium LLC-owned number to specific beta users with whom Minium
+        LLC has a pre-existing account relationship. No marketing,
+        promotional, or sales messages. No bulk sends, no third-party
+        offers, no affiliate marketing.
       </p>
 
       <h2>Sample messages — parent program</h2>
       <ul>
         <li>"Welcome to Foremann beta! Your business number is (555) 123-4567 and is ready to use. Reply HELP for help, STOP to opt out. Msg &amp; data rates may apply."</li>
-        <li>"Foremann beta: AI draft suggestions for incoming texts shipped today. Open the app to enable it. Reply STOP to opt out."</li>
+        <li>"Foremann: AI draft suggestions for incoming texts is now available in your app. Open Foremann to enable it on your account. Reply STOP to opt out."</li>
         <li>"Foremann support: replying to your question about the AI draft feature. Let me know if that helps. Reply STOP to opt out."</li>
       </ul>
 
@@ -134,10 +136,10 @@ import Footer from '../components/Footer.astro';
           collects email (required) and mobile phone (optional). When a
           phone number is provided, the user must also check an unchecked
           SMS consent box that reads: <em>"I agree to receive SMS from
-          Minium LLC about Foremann — account confirmations, beta program
-          updates, product announcements, and support replies. Message
-          frequency varies. Msg &amp; data rates may apply. Reply HELP
-          for help, STOP to opt out."</em> The form will not record a
+          Minium LLC about my Foremann account — account confirmations,
+          onboarding, product updates affecting my account, and support
+          replies. Message frequency varies. Msg &amp; data rates may
+          apply. Reply HELP for help, STOP to opt out."</em> The form will not record a
           phone number unless the consent box is also checked. Consent
           record (timestamp, source) is stored on the user record. See
           screenshot below.
@@ -172,8 +174,9 @@ import Footer from '../components/Footer.astro';
       <p>
         Before consenting (in any path), the user is told: (a) they
         will receive SMS from Minium LLC about Foremann — account
-        confirmations, beta program updates, product announcements, and
-        support replies; (b) message frequency varies; (c) message and
+        confirmations, onboarding, product updates affecting their
+        account, and support replies; (b) message frequency varies;
+        (c) message and
         data rates may apply; (d) they can reply <code>STOP</code> at
         any time to opt out or <code>HELP</code> for help. Consent record
         is retained for the life of the account and available for audit.
