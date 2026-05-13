@@ -109,7 +109,8 @@ import Footer from '../components/Footer.astro';
           frequency varies. Msg &amp; data rates may apply. Reply HELP
           for help, STOP to opt out."</em> The form will not record a
           phone number unless the consent box is also checked. Consent
-          record (timestamp, source) is stored on the user record.
+          record (timestamp, source) is stored on the user record. See
+          screenshot below.
         </li>
         <li>
           <strong>Direct email.</strong> The user emails
@@ -126,8 +127,20 @@ import Footer from '../components/Footer.astro';
           presented.
         </li>
       </ol>
+      <figure class="evidence-figure">
+        <img
+          src="/parent-consent-screenshot.png"
+          alt="foremann.app waitlist modal showing email field (required), mobile phone field (optional), and an unchecked SMS consent checkbox with the disclosure text: 'I agree to receive SMS from Minium LLC about Foremann — account confirmations, beta program updates, product announcements, and support replies. Message frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to opt out.'"
+          loading="lazy"
+        />
+        <figcaption>
+          foremann.app "Get early access" waitlist modal — parent program
+          web opt-in path. SMS consent checkbox is required and unchecked
+          by default; phone is only recorded when the box is also checked.
+        </figcaption>
+      </figure>
       <p>
-        Before consenting (in either path), the user is told: (a) they
+        Before consenting (in any path), the user is told: (a) they
         will receive SMS from Minium LLC about Foremann — account
         confirmations, beta program updates, product announcements, and
         support replies; (b) message frequency varies; (c) message and
