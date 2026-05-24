@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
         Campaign Registry (TCR), and any compliance reviewer auditing
         our A2P 10DLC campaigns.
       </p>
-      <div class="legal-meta">Last updated: May 23, 2026</div>
+      <div class="legal-meta">Last updated: May 24, 2026</div>
     </div>
   </section>
 
@@ -59,8 +59,11 @@ import Footer from '../components/Footer.astro';
           <strong>Per-contractor program — Foremann users to their own customers.</strong>
           1:1 messages sent from each contractor's dedicated business number
           to that contractor's own existing customers and leads. Registered as
-          an Agents and Franchises campaign under each contractor's own brand
-          (sub-customer brand under Minium LLC's ISV registration).
+          a Customer Care campaign (SOLE_PROPRIETOR use case for Sole Proprietor
+          brands) under each contractor's own brand — a sub-customer brand
+          registered by Minium LLC's ISV platform on the contractor's behalf
+          (Low Volume Standard for contractors with an EIN, Sole Proprietor
+          for SSN-only contractors).
         </li>
       </ul>
       <p>
@@ -96,9 +99,11 @@ import Footer from '../components/Footer.astro';
 
       <h2>Message types — per-contractor program (contractor to their customers)</h2>
       <p>
-        Outbound SMS in the per-contractor program is registered under
-        the <strong>Agents and Franchises</strong> use case and includes
-        only:
+        Each per-contractor campaign is operated by Minium LLC's ISV
+        platform on behalf of the contractor's business (e.g. "{'{business_name}'}").
+        Outbound SMS is registered under the <strong>Customer Care</strong>
+        use case (Sole Proprietor brands use the SOLE_PROPRIETOR use case)
+        and includes only:
       </p>
       <ul>
         <li>Appointment confirmations and reminders</li>
@@ -108,11 +113,14 @@ import Footer from '../components/Footer.astro';
         <li>Direct replies to inbound customer messages</li>
       </ul>
       <p>
-        Foremann does <strong>not</strong> send promotional or marketing
-        messages on the per-contractor program, affiliate or third-party
-        offers, or bulk/broadcast messages to non-customers. Each message
-        is sent by the contractor to a recipient with whom they have a
-        pre-existing service relationship.
+        Message frequency varies depending on what's happening with the
+        customer's service request. Message and data rates may apply.
+        Recipients can reply <code>HELP</code> for help or <code>STOP</code>
+        to opt out at any time. Foremann does <strong>not</strong> send
+        promotional, marketing, or sales messages on this program; no
+        affiliate or third-party offers; no bulk or broadcast messages to
+        non-customers. Each message is 1:1 from a contractor to a recipient
+        with whom the contractor has a pre-existing service relationship.
       </p>
 
       <h2>Sample messages — per-contractor program</h2>
@@ -121,6 +129,26 @@ import Footer from '../components/Footer.astro';
         <li>"Hey {'{customer}'}, following up on the {'{trade}'} quote we sent over. Any questions or want to schedule? Reply STOP to opt out."</li>
         <li>"Thanks for choosing {'{business_name}'} — if you have a minute we'd appreciate a quick review: {'{review_link}'}. Reply STOP to opt out, HELP for help."</li>
       </ul>
+
+      <h2>Message Flow text submitted to TCR — per-contractor program</h2>
+      <p>
+        The exact verbiage submitted in the TCR campaign Message Flow field
+        for every contractor's per-contractor campaign, reproduced here so a
+        reviewer cross-checking from the TCR portal sees identical language:
+      </p>
+      <blockquote class="consent-script">
+        <p>
+          "Customers opt in two ways: (1) inbound-first — customer texts
+          the contractor's published business number, establishing
+          consent for the contractor to reply; (2) in-app attestation —
+          contractor checks an unchecked-by-default consent box when
+          manually adding a contact, confirming the customer agreed to
+          receive SMS. Both paths produce a verifiable consent record
+          before any outbound SMS is sent. See
+          https://foremann.app/consent-evidence (per-contractor program
+          section) for visual proof."
+        </p>
+      </blockquote>
 
       <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
