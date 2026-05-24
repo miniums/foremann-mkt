@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
         Campaign Registry (TCR), and any compliance reviewer auditing
         our A2P 10DLC campaigns.
       </p>
-      <div class="legal-meta">Last updated: May 12, 2026</div>
+      <div class="legal-meta">Last updated: May 23, 2026</div>
     </div>
   </section>
 
@@ -125,7 +125,7 @@ import Footer from '../components/Footer.astro';
       <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
       <p>
         Foremann is currently in private beta. Beta users provide their
-        mobile phone number to Minium LLC via one of three paths, with
+        mobile phone number to Minium LLC via one of two paths, with
         explicit SMS consent captured before any outbound message is sent:
       </p>
       <ol>
@@ -145,18 +145,14 @@ import Footer from '../components/Footer.astro';
           screenshot below.
         </li>
         <li>
-          <strong>Direct email.</strong> The user emails
-          <a href="mailto:hi@foremann.app">hi@foremann.app</a> or replies
-          to a beta invitation from the founder with their phone number,
-          accompanied by explicit consent to receive SMS from Minium LLC
-          about Foremann.
-        </li>
-        <li>
-          <strong>Verbal.</strong> The founder collects the number and
-          verbal consent during a phone call or in-person conversation
-          with the beta user. A written consent record is logged on the
-          user record with timestamp, source, and the opt-in language
-          presented.
+          <strong>Verbal — phone or in-person.</strong> When a prospective
+          Foremann beta user contacts Minium LLC's founder by phone or in
+          person and asks to receive SMS updates about their Foremann
+          account, the founder reads (or closely paraphrases) the verbal
+          opt-in script below and obtains a verbal "yes" before any
+          number is logged or any message is sent. If the user says no,
+          no SMS is sent and no phone number is stored against an SMS
+          consent record.
         </li>
       </ol>
       <figure class="evidence-figure">
@@ -171,6 +167,35 @@ import Footer from '../components/Footer.astro';
           by default; phone is only recorded when the box is also checked.
         </figcaption>
       </figure>
+
+      <h3>Verbal opt-in script — parent program</h3>
+      <p>
+        The exact script read by Minium LLC's founder to a prospective
+        Foremann beta user during a phone call or in-person conversation,
+        before any phone number is logged or any SMS is sent:
+      </p>
+      <blockquote class="consent-script">
+        <p>
+          "Before I add you, I need to let you know what you're signing
+          up for. We'll text you from a Minium LLC number with account
+          confirmations, onboarding tips, product updates that affect
+          your account, and replies to support questions you send us.
+          Message frequency varies depending on what's happening with
+          your account. Message and data rates may apply from your
+          carrier. You can reply STOP at any time to opt out, or HELP
+          for help. Our privacy policy at foremann.app/privacy explains
+          how we handle your mobile information — we don't share it with
+          third parties for marketing. Is it OK to text you at this
+          number for those things?"
+        </p>
+      </blockquote>
+      <p>
+        If the user says yes, the founder logs a consent record on the
+        user account with: timestamp, source = <code>"verbal"</code>,
+        the phone number provided, and the script version read. If the
+        user says no, no SMS is sent and no phone number is stored
+        against an SMS consent record.
+      </p>
       <p>
         Before consenting (in any path), the user is told: (a) they
         will receive SMS from Minium LLC about Foremann — account
@@ -391,4 +416,15 @@ import Footer from '../components/Footer.astro';
     color: var(--text-tertiary);
     line-height: 1.5;
   }
+
+  .consent-script {
+    margin: 16px 0 24px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--rust);
+    background: var(--sand);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+    font-style: italic;
+  }
+  .consent-script p { margin: 0; }
 </style>
