@@ -492,9 +492,14 @@ section.ink-section .card p { color: color-mix(in oklab, var(--bone) 70%, transp
   display: grid;
   gap: 16px;
   grid-template-columns: 1fr;
+  /* HIDDEN FOR LAUNCH — two-up layout while Crew is hidden. Restore the values
+     below (max-width: none; 3 columns) when bringing the Crew card back. */
+  max-width: 720px;
+  margin-inline: auto;
 }
 @media (min-width: 780px) {
-  .pricing { grid-template-columns: repeat(3, 1fr); }
+  .pricing { grid-template-columns: repeat(2, 1fr); }
+  /* .pricing { grid-template-columns: repeat(3, 1fr); } */
 }
 .price-card {
   background: var(--surface);

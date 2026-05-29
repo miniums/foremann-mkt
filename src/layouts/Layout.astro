@@ -7,7 +7,7 @@ interface Props {
 }
 const {
   title = 'Foremann · The text comes in. The reply is already written.',
-  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $29/mo, beta open.'
+  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $39/mo, beta open.'
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -44,9 +44,10 @@ const {
         "audienceType": "Tradespeople, plumbers, electricians, landscapers, HVAC technicians, general contractors"
       },
       "offers": [
-        { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Pro", "price": "79", "priceCurrency": "USD", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Crew add-on", "price": "19", "priceCurrency": "USD", "billingDuration": "P1M", "description": "Per-seat add-on to Pro" }
+        { "@type": "Offer", "name": "Starter", "price": "39", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Pro", "price": "89", "priceCurrency": "USD", "billingDuration": "P1M" }
+        // HIDDEN FOR LAUNCH — Crew add-on. Restore alongside the pricing card in index.astro.
+        // , { "@type": "Offer", "name": "Crew add-on", "price": "19", "priceCurrency": "USD", "billingDuration": "P1M", "description": "Per-seat add-on to Pro" }
       ]
     })} />
   </head>
