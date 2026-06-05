@@ -150,27 +150,28 @@ import Footer from '../components/Footer.astro';
         </p>
       </blockquote>
 
-      <h2>How consent is captured — parent program (Minium LLC to Foremann beta users)</h2>
+      <h2>How consent is captured — parent program (Minium LLC to Foremann account holders)</h2>
       <p>
-        Foremann is currently in private beta. Beta users provide their
-        mobile phone number to Minium LLC via one of two paths, with
-        explicit SMS consent captured before any outbound message is sent:
+        Foremann account holders provide their mobile phone number to
+        Minium LLC via one of two paths, with explicit SMS consent
+        captured before any outbound message is sent:
       </p>
       <ol>
         <li>
-          <strong>Web waitlist form on foremann.app.</strong> The user
-          fills out the "Get early access" modal on
-          <a href="https://foremann.app">foremann.app</a>. The form
-          collects email (required) and mobile phone (optional). When a
-          phone number is provided, the user must also check an unchecked
-          SMS consent box that reads: <em>"I agree to receive SMS from
-          Minium LLC about my Foremann account — account confirmations,
-          onboarding, product updates affecting my account, and support
-          replies. Message frequency varies. Msg &amp; data rates may
-          apply. Reply HELP for help, STOP to opt out."</em> The form will not record a
-          phone number unless the consent box is also checked. Consent
-          record (timestamp, source) is stored on the user record. See
-          screenshot below.
+          <strong>Web sign-up form at app.foremann.app.</strong> When
+          creating a Foremann account at
+          <a href="https://app.foremann.app/signup">app.foremann.app/signup</a>,
+          the user may choose phone (SMS) verification. Selecting it reveals
+          a mobile-number field and an unchecked-by-default SMS consent box
+          that reads: <em>"I agree to receive a verification code and
+          occasional account messages from Foremann at this number. Up to 5
+          msgs/month. Msg &amp; data rates may apply. Reply STOP to opt out,
+          HELP for help."</em> The form will not send a code or record the
+          number unless the consent box is also checked. The same disclosure
+          and checkbox appear on the sign-in form at
+          <a href="https://app.foremann.app/signin">app.foremann.app/signin</a>.
+          A consent record (timestamp, source) is stored on the user record.
+          See screenshot below.
         </li>
         <li>
           <strong>Verbal — phone or in-person.</strong> When a prospective
@@ -185,14 +186,14 @@ import Footer from '../components/Footer.astro';
       </ol>
       <figure class="evidence-figure">
         <img
-          src="/parent-consent-screenshot.png"
-          alt="foremann.app waitlist modal showing email field (required), mobile phone field (optional), and an unchecked SMS consent checkbox with the disclosure text: 'I agree to receive SMS from Minium LLC about Foremann — account confirmations, beta program updates, product announcements, and support replies. Message frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to opt out.'"
+          src="/signup-consent-screenshot.png"
+          alt="app.foremann.app sign-up form with phone (SMS) verification selected, showing a mobile-number field and an unchecked SMS consent checkbox reading: 'I agree to receive a verification code and occasional account messages from Foremann at this number. Up to 5 msgs/month. Msg & data rates may apply. Reply STOP to opt out, HELP for help.'"
           loading="lazy"
         />
         <figcaption>
-          foremann.app "Get early access" waitlist modal — parent program
-          web opt-in path. SMS consent checkbox is required and unchecked
-          by default; phone is only recorded when the box is also checked.
+          app.foremann.app sign-up form — parent program web opt-in path.
+          The SMS consent checkbox is required and unchecked by default;
+          the number is only recorded when the box is also checked.
         </figcaption>
       </figure>
 

@@ -1,13 +1,12 @@
 ---
 import '../styles/global.css';
-import WaitlistModal from '../components/WaitlistModal.astro';
 interface Props {
   title?: string;
   description?: string;
 }
 const {
   title = 'Foremann · The text comes in. The reply is already written.',
-  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $39/mo, beta open.'
+  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $39/mo. Sign up in minutes.'
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -53,6 +52,5 @@ const {
   </head>
   <body>
     <slot />
-    <WaitlistModal />
   </body>
 </html>
