@@ -15,7 +15,7 @@ import Footer from '../components/Footer.astro';
         your foreman drafts, is data we're trusted with. This page explains what we collect,
         why we collect it, and what you can do about it.
       </p>
-      <div class="legal-meta">Effective: April 24, 2026 · Last updated: April 30, 2026</div>
+      <div class="legal-meta">Effective: April 24, 2026 · Last updated: June 12, 2026</div>
     </div>
   </section>
 
@@ -48,7 +48,8 @@ import Footer from '../components/Footer.astro';
       <ul>
         <li><strong>SMS content:</strong> the full body of every inbound and outbound text message sent to or from your Foremann business number, with timestamps and delivery status.</li>
         <li><strong>Caller phone numbers:</strong> the phone number of any client who texts or calls your business line.</li>
-        <li><strong>Voice calls:</strong> we do not record or store voice calls. Inbound calls hear a short "please text this number instead" message and are disconnected.</li>
+        <li><strong>Media attachments:</strong> photos and files you attach to a message, and contact photos you set for a client, stored so we can deliver and display them in the conversation.</li>
+        <li><strong>Voice calls:</strong> Foremann lets you place and receive phone calls with your clients through your business number, carried by our telephony provider (Twilio). We record and store the audio of these calls, along with call metadata (the phone numbers involved, timestamps, and duration), so you have a record of what was discussed, can play calls back, and we can meter usage against your plan. You are responsible for complying with call-recording and consent laws that apply to you and your clients — some U.S. states require all parties to consent to recording.</li>
       </ul>
 
       <h3>2.3 AI-generated content</h3>
@@ -110,8 +111,8 @@ import Footer from '../components/Footer.astro';
         Claude models via the Anthropic API. To generate a draft, we send the relevant
         conversation thread and your business profile to Anthropic as a prompt. Anthropic
         processes the prompt, returns the draft, and — per their API terms — does not use
-        API inputs or outputs to train their models. We use prompt caching to reduce cost,
-        which means portions of your business profile may sit in Anthropic's short-lived
+        API inputs or outputs to train their models. We may use prompt caching to reduce cost,
+        which can mean portions of your business profile sit in Anthropic's short-lived
         cache for a few minutes at a time.
       </p>
 
