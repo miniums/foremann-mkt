@@ -1,13 +1,20 @@
 ---
+import StoreLinks from './StoreLinks.astro';
 ---
 <footer>
   <div class="wrap">
-    <div class="legal">© 2026 Foremann · Operated by Minium LLC · Built for the trades</div>
-    <div class="foot-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/consent-evidence">SMS Consent</a>
-      <a href="mailto:hi@foremann.app">Contact</a>
+    <div class="foot-top">
+      <div class="foot-get">Get Foremann</div>
+      <StoreLinks height={40} />
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">© 2026 Foremann · Operated by Minium LLC · Built for the trades</div>
+      <div class="foot-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/consent-evidence">SMS Consent</a>
+        <a href="mailto:hi@foremann.app">Contact</a>
+      </div>
     </div>
   </div>
 </footer>

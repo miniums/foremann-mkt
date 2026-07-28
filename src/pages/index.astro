@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import PhonePreview from '../components/PhonePreview.astro';
+import StoreLinks from '../components/StoreLinks.astro';
 ---
 <Layout>
   <Nav />
@@ -21,7 +22,8 @@ import PhonePreview from '../components/PhonePreview.astro';
         <a href="https://app.foremann.app/signup?plan=pro" class="btn btn-primary">Get your business number</a>
         <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
-      <div class="hero-note">From $39/mo · Cancel anytime · Setup in 5 minutes · iOS + Android</div>
+      <StoreLinks />
+      <div class="hero-note">From $39/mo · Cancel anytime · Setup in 5 minutes</div>
     </div>
 
     <div class="preview">
@@ -152,7 +154,7 @@ import PhonePreview from '../components/PhonePreview.astro';
             <li>Auto follow-ups on stale quotes</li>
             <li>AI summaries of long threads</li>
             <li>Unlimited inbound SMS</li>
-            <li>iOS + Android apps</li>
+            <li>iPhone app — Android coming soon</li>
           </ul>
           <a href="https://app.foremann.app/signup?plan=starter" class="btn btn-secondary price-cta">Get your business number</a>
         </div>
@@ -256,7 +258,7 @@ import PhonePreview from '../components/PhonePreview.astro';
         <details class="faq-item">
           <summary class="faq-q">Does it work on iPhone and Android?</summary>
           <div class="faq-a">
-            <p>Yes, both. Download the Foremann app, sign up, and your number is set up inside the app in about five minutes.</p>
+            <p>iPhone today — Foremann is live on the <a href="https://apps.apple.com/us/app/foremann/id6773165667" target="_blank" rel="noopener">App Store</a>. Download it, sign up, and your number is set up inside the app in about five minutes. Android is in the works and we'll ship it as soon as it's ready.</p>
           </div>
         </details>
 
@@ -334,7 +336,7 @@ import PhonePreview from '../components/PhonePreview.astro';
           {
             "@type": "Question",
             "name": "Does it work on iPhone and Android?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes, both. Download the Foremann app, sign up, and your number is set up inside the app in about five minutes." }
+            "acceptedAnswer": { "@type": "Answer", "text": "iPhone today — Foremann is live on the App Store. Download it, sign up, and your number is set up inside the app in about five minutes. Android is in the works and we'll ship it as soon as it's ready." }
           },
           {
             "@type": "Question",
@@ -369,12 +371,13 @@ import PhonePreview from '../components/PhonePreview.astro';
   <!-- ================== FINAL CTA ================== -->
   <section class="big-cta" id="get">
     <div class="wrap">
-      <div class="eyebrow">Now open</div>
+      <div class="eyebrow">Now on the App Store</div>
       <h2 class="display">Stop losing jobs to the guy who texted back first.</h2>
       <div class="ctas">
         <a href="https://app.foremann.app/signup?plan=pro" class="btn btn-primary">Get your business number</a>
         <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
+      <StoreLinks align="center" />
     </div>
   </section>
 
