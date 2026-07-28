@@ -166,6 +166,55 @@ button { font-family: inherit; }
 }
 .btn-ghost:hover { color: var(--rust); }
 
+/* ---------- App store badges ----------
+   Apple's badge artwork is never recolored or restyled — only the official
+   black (light bg) and white (dark bg) variants are swapped via <picture>.
+   The hover/press states live on the wrapping link, not the artwork.
+---------------------------------------- */
+
+.store-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.store-row-center { justify-content: center; }
+
+.app-store-badge {
+  display: inline-flex;
+  border-radius: 9px;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.app-store-badge picture { display: block; }
+.app-store-badge img { display: block; height: auto; }
+.app-store-badge:hover { opacity: 0.85; }
+.app-store-badge:active { transform: scale(0.97); }
+.app-store-badge:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 4px;
+}
+
+.store-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.store-soon-dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.65;
+}
+
 /* ---------- Nav ---------- */
 
 .nav {
@@ -618,10 +667,32 @@ footer {
 }
 footer .wrap {
   display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+footer .foot-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+footer .foot-get {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+footer .foot-top .store-row { margin-top: 0; }
+footer .foot-bottom {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-faint);
 }
 footer .legal {
   font-family: var(--font-mono);

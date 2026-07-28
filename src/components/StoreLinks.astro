@@ -1,0 +1,37 @@
+---
+/*
+  Official Apple "Download on the App Store" badge (black + white variants,
+  unmodified, from Apple's Marketing Tools). Black badge on the bone background,
+  white badge in dark mode. Android is not shipped yet — the note next to the
+  badge says so rather than showing a dead Google Play badge.
+*/
+interface Props {
+  height?: number;
+  align?: 'start' | 'center';
+}
+const { height = 44, align = 'start' } = Astro.props;
+const width = Math.round((height * 119.66407) / 40);
+const APP_STORE_URL = 'https://apps.apple.com/us/app/foremann/id6773165667';
+---
+<div class:list={['store-row', align === 'center' && 'store-row-center']}>
+  <a
+    href={APP_STORE_URL}
+    class="app-store-badge"
+    target="_blank"
+    rel="noopener"
+    aria-label="Download Foremann on the App Store"
+  >
+    <picture>
+      <source srcset="/badges/app-store-white.svg" media="(prefers-color-scheme: dark)" />
+      <img
+        src="/badges/app-store-black.svg"
+        alt="Download on the App Store"
+        width={width}
+        height={height}
+      />
+    </picture>
+  </a>
+  <span class="store-soon">
+    <span class="store-soon-dot" aria-hidden="true"></span>Android coming soon
+  </span>
+</div>
