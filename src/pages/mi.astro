@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// Founding-customer landing page for the SE Michigan launch push. The printed
+// and texted cards point here (foremann.app/mi), so the copy mirrors the card:
+// same headline, same three proof points, same offer. Keep them in sync.
+const SIGNUP = 'https://app.foremann.app/signup?plan=pro&src=mi';
+---
+<Layout
+  title="Foremann for SE Michigan Contractors"
+  description="Business texts and calls with AI drafts in your voice. First month free for the first 15 SE Michigan contractors. Setup included."
+>
+  <Nav />
+
+  <section class="mi-hero">
+    <div class="wrap">
+      <span class="tag"><span class="tag-dot"></span>Metro Detroit &middot; SE Michigan</span>
+      <h1 class="display">Stop losing jobs to <span class="rust">missed texts.</span></h1>
+      <p class="lede">
+        Business texts and calls with AI drafts in your voice.
+        Built for solo contractors and small crews.
+      </p>
+
+      <ol class="mi-proof">
+        <li>
+          <span class="mi-num">01</span>
+          <span>Client texts at 9pm. Foremann <strong>drafts a reply in your voice.</strong></span>
+        </li>
+        <li>
+          <span class="mi-num">02</span>
+          <span>Miss a call. Foremann <strong>auto-transcribes the voicemail</strong> in seconds.</span>
+        </li>
+        <li>
+          <span class="mi-num">03</span>
+          <span>Every call and text summarized. <strong>Never lose the thread on a quote.</strong></span>
+        </li>
+      </ol>
+
+      <div class="mi-offer">
+        <div class="mi-offer-tag">Founding Customer</div>
+        <div class="mi-offer-body">First month free. Setup included. Cancel anytime.</div>
+        <div class="mi-offer-fine">First 15 SE Michigan contractors.</div>
+      </div>
+
+      <div class="mi-ctas">
+        <a href={SIGNUP} class="btn btn-primary">Claim your free month</a>
+      </div>
+      <div class="mi-note">
+        Takes about 3 minutes. Card on file, first month free, cancel anytime.
+        Your business number goes live once carrier registration clears.
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Single-column conversion page — no phone preview to balance a two-column
+     hero, so the content column is centered instead of left-hugging. */
+  .mi-hero {
+    padding: clamp(48px, 8vw, 88px) 0 clamp(56px, 9vw, 104px);
+  }
+
+  .mi-hero :global(.wrap) {
+    max-width: 720px;
+  }
+
+  .mi-hero .display {
+    font-size: clamp(40px, 6.4vw, 68px);
+    margin: 18px 0 0;
+    max-width: 16ch;
+  }
+
+  .rust { color: var(--rust); }
+
+  .mi-hero .lede {
+    margin: 20px 0 0;
+    max-width: 46ch;
+  }
+
+  /* ---- Proof points ---- */
+
+  .mi-proof {
+    list-style: none;
+    margin: clamp(32px, 5vw, 44px) 0 0;
+    padding: 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .mi-proof li {
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--hairline);
+    font-size: clamp(16px, 1.7vw, 18px);
+    line-height: 1.45;
+  }
+
+  .mi-num {
+    flex: none;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+  }
+
+  .mi-proof strong { font-weight: 800; }
+
+  /* ---- Offer block ---- */
+
+  .mi-offer {
+    margin: clamp(32px, 5vw, 44px) 0 0;
+    padding: 24px 26px;
+    border-radius: 16px;
+    border: 2px solid var(--rust);
+    background: var(--ink);
+    color: var(--bone);
+  }
+
+  .mi-offer-tag {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+
+  .mi-offer-body {
+    margin-top: 8px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(20px, 2.6vw, 26px);
+    line-height: 1.2;
+  }
+
+  .mi-offer-fine {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.78;
+  }
+
+  /* The offer block hard-codes an inverted surface. In dark mode --ink/--bone
+     swap, so it would render bone-on-bone; and a near-black fill would vanish
+     into the near-black page. Use a lifted rust-tinted surface instead so the
+     block still reads as a distinct callout. */
+  @media (prefers-color-scheme: dark) {
+    .mi-offer {
+      background: color-mix(in oklab, var(--rust) 12%, #131311);
+      color: #F4F0E8;
+    }
+  }
+
+  /* ---- CTA ---- */
+
+  .mi-ctas {
+    margin-top: clamp(28px, 4vw, 36px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .mi-note {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 52ch;
+  }
+</style>
