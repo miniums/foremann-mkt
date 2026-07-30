@@ -243,8 +243,15 @@ button { font-family: inherit; }
   letter-spacing: -0.02em;
   font-size: 18px;
   color: var(--text-primary);
+  min-width: 0;
+}
+.brand-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .brand-mark {
+  flex: none;
   width: 32px;
   height: 32px;
   border-radius: 8px;
@@ -260,6 +267,7 @@ button { font-family: inherit; }
   display: flex;
   gap: 4px;
   align-items: center;
+  flex: none;
 }
 .nav-link {
   padding: 10px 12px;
@@ -269,7 +277,8 @@ button { font-family: inherit; }
   border-radius: 8px;
 }
 .nav-link:hover { color: var(--text-primary); }
-@media (max-width: 640px) {
+/* Below this the section links no longer fit beside the brand and the CTA. */
+@media (max-width: 719px) {
   .nav-links .nav-link:not(.nav-cta) { display: none; }
 }
 .nav-cta {
@@ -284,6 +293,12 @@ button { font-family: inherit; }
   white-space: nowrap;
 }
 .nav-cta:hover { color: var(--bone); background: var(--rust); }
+/* The full label only fits alongside the brand and links on wide viewports. */
+.nav-cta-long { display: none; }
+@media (min-width: 900px) {
+  .nav-cta-long { display: inline; }
+  .nav-cta-short { display: none; }
+}
 @media (max-width: 640px) {
   .nav-cta { padding: 10px 12px; font-size: 12px; letter-spacing: 0.02em; }
 }
