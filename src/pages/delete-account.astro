@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Delete Your Account — Foremann" description="How to delete your Foremann account, what data is removed, and what we're required to keep.">
+  <Nav />
+
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="eyebrow">Legal</div>
+      <h1 class="display">Delete Your Account</h1>
+      <p class="lede">
+        Foremann is a business texting and calling app for tradespeople, operated by
+        Minium LLC. This page explains how to delete your Foremann account, exactly what
+        data is removed, and the few things we're required to keep.
+      </p>
+      <div class="legal-meta">Last updated: July 30, 2026</div>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="wrap legal-doc">
+
+      <h2>1. Delete your account from the app</h2>
+      <ol>
+        <li>Open <strong>Foremann</strong> and sign in.</li>
+        <li>Go to the <strong>Settings</strong> tab.</li>
+        <li>Scroll to the bottom and tap <strong>Delete account</strong>.</li>
+        <li>Confirm when prompted.</li>
+      </ol>
+      <p>
+        Deletion starts immediately and <strong>cannot be undone</strong>. There is no
+        grace period and no way for us to restore the account afterwards.
+      </p>
+
+      <h2>2. If you can't sign in</h2>
+      <p>
+        Email <a href="mailto:privacy@foremann.app">privacy@foremann.app</a> from the
+        email address on your account, or tell us the phone number you signed up with.
+        We'll verify that you own the account and delete it within 30 days.
+      </p>
+
+      <h2>3. What gets deleted</h2>
+      <p>Deleting your account permanently removes all of the following:</p>
+      <ul>
+        <li><strong>Your profile:</strong> name, email address, personal phone number, time zone, and your sign-in credentials.</li>
+        <li><strong>Your business profile:</strong> business name, trade, service area, pricing notes, availability, and tone preferences.</li>
+        <li><strong>Your client records:</strong> every customer name, phone number, address, note, and contact photo you saved.</li>
+        <li><strong>Your message history:</strong> the full body of every text sent to and from your business number, along with all photos and file attachments.</li>
+        <li><strong>Your call history:</strong> call logs, voicemails, call recordings, and transcripts. Recording audio is deleted from our storage and from our telephony provider.</li>
+        <li><strong>AI content:</strong> every draft reply, follow-up, and summary generated for your account.</li>
+        <li><strong>Text-messaging consent records:</strong> opt-in and opt-out events recorded for your clients.</li>
+        <li><strong>Push notification tokens</strong> for every device you signed in on.</li>
+      </ul>
+      <p>
+        At the same time, your <strong>subscription is cancelled</strong> so you are not
+        billed again, and your <strong>Foremann business phone number is released</strong>.
+      </p>
+
+      <h2>4. Your business phone number can't be recovered</h2>
+      <p>
+        Once released, your business number returns to the carrier's pool and may be
+        reassigned to someone else. If you want to keep that number, port it to another
+        carrier <em>before</em> you delete your account. We can't retrieve it afterwards.
+      </p>
+
+      <h2>5. What we keep, and for how long</h2>
+      <ul>
+        <li><strong>Encrypted backups:</strong> deleted data may persist in our encrypted backups for up to 30 additional days before rotating out. Backups are used only for disaster recovery and are never used to restore a deleted account.</li>
+        <li><strong>Billing records:</strong> our payment processor (Stripe) retains invoice and transaction records as required by tax and accounting law. These contain your billing history, not your messages or client data.</li>
+        <li><strong>Carrier records:</strong> our telephony provider (Twilio) keeps its own message and call logs to meet telecom record-keeping requirements, on their retention schedule.</li>
+      </ul>
+
+      <h2>6. Deleting some data without deleting your account</h2>
+      <p>
+        You don't have to delete your whole account to remove data. In the app you can
+        delete an individual conversation, which removes its messages and attachments.
+        Deleted messages are held for a 30-day grace period and are then permanently
+        purged. You can also delete individual client records and their notes.
+      </p>
+
+      <h2>7. Questions</h2>
+      <p>
+        Email <a href="mailto:privacy@foremann.app">privacy@foremann.app</a>. For anything
+        else, see our <a href="/privacy">Privacy Policy</a> and
+        <a href="/terms">Terms of Service</a>.
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Mirrors the scoped legal styles in privacy.astro / terms.astro. Astro
+     scopes <style> per component, so these can't be inherited — they're
+     duplicated deliberately. Keep the three legal pages in sync. */
+  .legal-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(30px, 4vw, 50px);
+  }
+  .legal-hero .display {
+    font-size: clamp(44px, 7vw, 80px);
+    margin: 18px 0 20px;
+  }
+  .legal-hero .lede { max-width: 720px; }
+  .legal-meta {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .legal-body {
+    padding: clamp(30px, 5vw, 60px) 0 clamp(60px, 9vw, 120px);
+  }
+  .legal-doc {
+    max-width: 760px;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  .legal-doc h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(22px, 2.6vw, 28px);
+    color: var(--text-primary);
+    margin: 56px 0 14px;
+  }
+  .legal-doc h2:first-child { margin-top: 0; }
+  .legal-doc h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 28px 0 8px;
+  }
+  .legal-doc p { margin: 0 0 16px; }
+  /* `ol` is added here — the other legal pages only use `ul`, but the
+     deletion steps are numbered and Play expects them to read as steps. */
+  .legal-doc ul,
+  .legal-doc ol {
+    margin: 0 0 20px;
+    padding-left: 22px;
+  }
+  .legal-doc li { margin-bottom: 8px; }
+  .legal-doc strong { color: var(--text-primary); font-weight: 700; }
+  .legal-doc a {
+    color: var(--rust);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .legal-doc a:hover { color: var(--rust-dark); }
+  .legal-doc code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--sand);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+</style>
