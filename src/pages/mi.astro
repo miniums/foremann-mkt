@@ -10,16 +10,16 @@ const SIGNUP = 'https://app.foremann.app/signup?plan=pro&src=mi';
 ---
 <Layout
   title="Foremann for SE Michigan Contractors"
-  description="Business texts and calls with AI drafts in your voice. First month free for the first 15 SE Michigan contractors. Setup included."
+  description="Every text and call in one inbox, with replies drafted by AI. First month free for the first 15 SE Michigan contractors. Setup included."
 >
   <Nav />
 
   <section class="mi-hero">
     <div class="wrap">
       <span class="tag"><span class="tag-dot"></span>Metro Detroit &middot; SE Michigan</span>
-      <h1 class="display">Stop losing jobs to <span class="rust">missed texts.</span></h1>
+      <h1 class="display">Never miss another <span class="rust">job.</span></h1>
       <p class="lede">
-        Business texts and calls with AI drafts in your voice.
+        Every text and call in one inbox, with replies drafted by AI.
         Built for solo contractors and small crews.
       </p>
 
@@ -72,6 +72,10 @@ const SIGNUP = 'https://app.foremann.app/signup?plan=pro&src=mi';
     font-size: clamp(40px, 6.4vw, 68px);
     margin: 18px 0 0;
     max-width: 16ch;
+    /* .display runs -0.035em tracking, which closes the word gap enough that
+       "another job." collides into one word. Open the word space back up
+       without touching the letterforms. */
+    word-spacing: 0.12em;
   }
 
   .rust { color: var(--rust); }
