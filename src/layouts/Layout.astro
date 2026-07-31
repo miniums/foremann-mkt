@@ -3,6 +3,9 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Share-card image, root-relative. 1200x630. Resolved to an absolute URL below. */
+  image?: string;
+  imageAlt?: string;
 }
 // The title leads with the hook rather than the brand: these links get texted
 // to contractors, and in a message preview the title is the bold line that has
@@ -10,8 +13,14 @@ interface Props {
 // don't truncate it, and carries the trade names that branded search misses.
 const {
   title = 'Never miss another job · Foremann for contractors',
-  description = 'Every text and call in one inbox, with replies drafted in your voice. Built for plumbers, electricians, landscapers and contractors. From $39/mo.'
+  description = 'Every text and call in one inbox, with replies drafted in your voice. Built for plumbers, electricians, landscapers and contractors. From $39/mo.',
+  image = '/og.png',
+  imageAlt = 'Foremann. Never miss another job. Business texting and calling for contractors.'
 } = Astro.props;
+
+// og:image must be absolute — Messages, Slack, and the crawlers won't resolve a
+// root-relative path. Astro.site is set to https://foremann.app in astro.config.
+const imageUrl = new URL(image, Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +36,16 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:site_name" content="Foremann" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="theme-color" content="#F4F0E8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
