@@ -12,11 +12,11 @@ import StoreLinks from '../components/StoreLinks.astro';
   <section class="hero">
     <div class="wrap">
       <span class="tag"><span class="tag-dot"></span>Built for plumbers, electricians, landscapers &amp; contractors</span>
-      <h1 class="display">Never get behind on messages again.</h1>
+      <h1 class="display">Never miss another <span class="rust">job.</span></h1>
       <p class="lede">
-        Foremann drafts every reply in your voice, reminds you to follow up,
-        and keeps a running summary of every client thread — so nothing slips
-        while you're on the job.
+        Every text and call in one inbox. Foremann drafts the replies in
+        your voice, reminds you to follow up, and keeps a running summary
+        of every thread so nothing slips when you're on the job.
       </p>
       <div class="hero-ctas">
         <a href="https://app.foremann.app/signup?plan=pro" class="btn btn-primary">Get your business number</a>
@@ -30,6 +30,13 @@ import StoreLinks from '../components/StoreLinks.astro';
       <PhonePreview />
     </div>
   </section>
+
+  <style>
+    /* .display runs -0.035em tracking, which at hero size closes the word gap
+       enough that "another job." collides into one word. Open the word space
+       back up without touching the shared letterforms. */
+    .hero h1 { word-spacing: 0.12em; }
+  </style>
 
   <!-- ================== HOW IT WORKS ================== -->
   <section id="how">
