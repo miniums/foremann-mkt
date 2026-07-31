@@ -119,6 +119,9 @@ button { font-family: inherit; }
 
 .muted { color: var(--text-secondary); }
 
+/* Accent a word inside a headline. Used by the shared hero headline on / and /mi. */
+.rust { color: var(--rust); }
+
 .lede {
   font-size: clamp(17px, 1.8vw, 20px);
   line-height: 1.5;
