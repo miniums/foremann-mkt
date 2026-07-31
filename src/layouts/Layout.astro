@@ -4,9 +4,13 @@ interface Props {
   title?: string;
   description?: string;
 }
+// The title leads with the hook rather than the brand: these links get texted
+// to contractors, and in a message preview the title is the bold line that has
+// to earn the tap. The description stays under ~155 chars so search results
+// don't truncate it, and carries the trade names that branded search misses.
 const {
-  title = 'Foremann · The text comes in. The reply is already written.',
-  description = 'A business phone line with an AI that drafts every reply in your voice. Built for plumbers, electricians, landscapers, HVAC techs, and contractors. From $39/mo. Sign up in minutes.'
+  title = 'Never miss another job · Foremann for contractors',
+  description = 'Every text and call in one inbox, with replies drafted in your voice. Built for plumbers, electricians, landscapers and contractors. From $39/mo.'
 } = Astro.props;
 ---
 <!DOCTYPE html>
