@@ -35,6 +35,9 @@ No env vars needed. No backend.
 - App Store badge is Apple's official artwork, unmodified — black variant on light,
   white variant on dark, swapped with `<picture>`. Never recolor or restyle it.
   Re-download from Apple's Marketing Tools if it ever needs refreshing.
+- Google Play badge (`public/badges/google-play-*.svg`) is a hand-built recreation,
+  not Google's official asset — swap in the real badge from Google Play's badge
+  generator before shipping.
 - ~90KB total page weight (fonts dominate)
 
 ## Structure
@@ -47,9 +50,9 @@ src/
     Nav.astro
     Footer.astro
     PhonePreview.astro    # the AI-draft hero mockup
-    StoreLinks.astro      # App Store badge + "Android coming soon"
+    StoreLinks.astro      # App Store + Google Play badges
   styles/global.css       # all styles, CSS vars, dark mode
 public/
   favicon.svg
-  badges/                 # official Apple App Store badges (black + white)
+  badges/                 # official Apple App Store badges + Google Play badges (black + white)
 ```
