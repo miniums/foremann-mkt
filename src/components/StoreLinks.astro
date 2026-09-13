@@ -2,16 +2,22 @@
 /*
   Official Apple "Download on the App Store" badge (black + white variants,
   unmodified, from Apple's Marketing Tools). Black badge on the bone background,
-  white badge in dark mode. Android is not shipped yet — the note next to the
-  badge says so rather than showing a dead Google Play badge.
+  white badge in dark mode.
+
+  Google Play badge is a hand-built recreation (Google's official badge PNG
+  isn't vendored in this repo) — swap in the real asset from Google Play's
+  badge generator before shipping. Foremann is live on both stores as of the
+  Android launch; see CONFIRM notes in docs if the Play Store URL changes.
 */
 interface Props {
   height?: number;
   align?: 'start' | 'center';
 }
 const { height = 44, align = 'start' } = Astro.props;
-const width = Math.round((height * 119.66407) / 40);
+const appStoreWidth = Math.round((height * 119.66407) / 40);
+const playStoreWidth = Math.round((height * 135) / 40);
 const APP_STORE_URL = 'https://apps.apple.com/us/app/foremann/id6773165667';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=app.foremann.app';
 ---
 <div class:list={['store-row', align === 'center' && 'store-row-center']}>
   <a
@@ -26,12 +32,26 @@ const APP_STORE_URL = 'https://apps.apple.com/us/app/foremann/id6773165667';
       <img
         src="/badges/app-store-black.svg"
         alt="Download on the App Store"
-        width={width}
+        width={appStoreWidth}
         height={height}
       />
     </picture>
   </a>
-  <span class="store-soon">
-    <span class="store-soon-dot" aria-hidden="true"></span>Android coming soon
-  </span>
+  <a
+    href={PLAY_STORE_URL}
+    class="app-store-badge"
+    target="_blank"
+    rel="noopener"
+    aria-label="Get Foremann on Google Play"
+  >
+    <picture>
+      <source srcset="/badges/google-play-white.svg" media="(prefers-color-scheme: dark)" />
+      <img
+        src="/badges/google-play-black.svg"
+        alt="Get it on Google Play"
+        width={playStoreWidth}
+        height={height}
+      />
+    </picture>
+  </a>
 </div>
