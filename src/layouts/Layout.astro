@@ -13,7 +13,7 @@ interface Props {
 // don't truncate it, and carries the trade names that branded search misses.
 const {
   title = 'Never miss another job · Foremann for contractors',
-  description = 'Every text and call in one inbox, with replies drafted in your voice. Built for plumbers, electricians, landscapers and contractors. From $39/mo.',
+  description = 'Every text and call in one inbox, with replies drafted in your voice. Built for plumbers, electricians, landscapers and contractors. From $49/mo.',
   image = '/og.png',
   imageAlt = 'Foremann. Never miss another job. Business texting and calling for contractors.'
 } = Astro.props;
@@ -65,8 +65,13 @@ const imageUrl = new URL(image, Astro.site).href;
         "audienceType": "Tradespeople, plumbers, electricians, landscapers, HVAC technicians, general contractors"
       },
       "offers": [
-        { "@type": "Offer", "name": "Starter", "price": "39", "priceCurrency": "USD", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Pro", "price": "89", "priceCurrency": "USD", "billingDuration": "P1M" }
+        { "@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Pro", "price": "99", "priceCurrency": "USD", "billingDuration": "P1M" }
+        // Founding Member offer ($39/mo, first 25 Starter customers) deliberately
+        // NOT modeled here — it's a quantity-limited, time-sensitive offer and
+        // schema.org's Offer eligibleQuantity/availabilityEnds fields don't map
+        // cleanly onto "first N redemptions." The live offer + counter is on the
+        // page itself (#founding-offer in index.astro).
         // HIDDEN FOR LAUNCH — Crew add-on. Restore alongside the pricing card in index.astro.
         // , { "@type": "Offer", "name": "Crew add-on", "price": "19", "priceCurrency": "USD", "billingDuration": "P1M", "description": "Per-seat add-on to Pro" }
       ]

@@ -23,7 +23,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
       <StoreLinks />
-      <div class="hero-note">From $39/mo · Cancel anytime · Setup in 5 minutes</div>
+      <div class="hero-note">From $49/mo · Cancel anytime · Setup in 5 minutes</div>
     </div>
 
     <div class="preview">
@@ -146,14 +146,46 @@ import StoreLinks from '../components/StoreLinks.astro';
         <p class="lede">No annual contracts, no setup fees, no per-message charges. Cancel anytime.</p>
       </div>
 
+      <div class="founding-banner" id="founding-offer">
+        <div class="founding-banner-text">
+          <strong>Founding rate: $39/month, locked in for life</strong> — limited to our first
+          {' '}<span id="founding-cap">25</span> customers. After that, Starter is $49/month.
+        </div>
+        <div class="founding-banner-count" id="founding-count" hidden>
+          <span id="founding-remaining">25</span> of <span id="founding-cap-2">25</span> spots left
+        </div>
+      </div>
+      <script is:inline>
+        (function () {
+          fetch('https://app.foremann.app/api/v1/_meta/founding-status')
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (data) {
+              if (!data) return;
+              var capEls = [document.getElementById('founding-cap'), document.getElementById('founding-cap-2')];
+              capEls.forEach(function (el) { if (el) el.textContent = data.cap; });
+              var remainingEl = document.getElementById('founding-remaining');
+              if (remainingEl) remainingEl.textContent = data.remaining;
+              var countEl = document.getElementById('founding-count');
+              if (countEl) countEl.hidden = false;
+              var bannerEl = document.getElementById('founding-offer');
+              if (bannerEl && !data.available) bannerEl.hidden = true;
+            })
+            .catch(function () {
+              // Offline or the endpoint's unreachable — the static "limited to our
+              // first 25" copy above already stands on its own without a live count.
+            });
+        })();
+      </script>
+
       <div class="pricing">
         <div class="price-card">
           <div class="price-name">Starter</div>
           <div class="price-persona">Running your own jobs.</div>
           <div>
-            <span class="price-amount">$39</span>
+            <span class="price-amount">$49</span>
             <span class="price-period">/ mo</span>
           </div>
+          <div class="price-annual">Founding customers: $39/mo, locked in for life</div>
           <ul class="price-features">
             <li>One business number</li>
             <li>200 AI replies to incoming texts / month</li>
@@ -170,7 +202,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           <div class="price-name">Pro</div>
           <div class="price-persona">Busy enough that every lead counts.</div>
           <div>
-            <span class="price-amount">$89</span>
+            <span class="price-amount">$99</span>
             <span class="price-period">/ mo</span>
           </div>
           <ul class="price-features">
@@ -317,7 +349,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <details class="faq-item">
           <summary class="faq-q">How is Foremann different from Podium or an answering service?</summary>
           <div class="faq-a">
-            <p>Podium is a marketing tool built for big crews and runs $400+ a month. Phone answering services charge $200–$500 a month for someone else to talk to your clients. Foremann starts at $39 a month and you stay in the conversation — the AI drafts the reply, you send it.</p>
+            <p>Podium is a marketing tool built for big crews and runs $400+ a month. Phone answering services charge $200–$500 a month for someone else to talk to your clients. Foremann starts at $49 a month ($39 for our founding customers) and you stay in the conversation — the AI drafts the reply, you send it.</p>
           </div>
         </details>
 
@@ -394,7 +426,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           {
             "@type": "Question",
             "name": "How is Foremann different from Podium or an answering service?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Podium is a marketing tool built for big crews and runs $400+ a month. Phone answering services charge $200-$500 a month for someone else to talk to your clients. Foremann starts at $39 a month and you stay in the conversation — the AI drafts the reply, you send it." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Podium is a marketing tool built for big crews and runs $400+ a month. Phone answering services charge $200-$500 a month for someone else to talk to your clients. Foremann starts at $49 a month ($39 for our founding customers) and you stay in the conversation — the AI drafts the reply, you send it." }
           },
           {
             "@type": "Question",

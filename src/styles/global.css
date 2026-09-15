@@ -535,6 +535,35 @@ section.ink-section .card p { color: color-mix(in oklab, var(--bone) 70%, transp
 
 /* ---------- Pricing ---------- */
 
+.founding-banner {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding: 16px 22px;
+  border: 1px solid var(--rust);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--rust) 8%, var(--surface));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.founding-banner-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+.founding-banner-text strong { color: var(--rust); }
+.founding-banner-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rust);
+  white-space: nowrap;
+}
+
 .pricing {
   display: grid;
   gap: 16px;
