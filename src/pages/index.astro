@@ -18,8 +18,8 @@ import StoreLinks from '../components/StoreLinks.astro';
       <span class="tag"><span class="tag-dot"></span>Built for plumbers, electricians, landscapers &amp; contractors</span>
       <h1 class="display">Your quiet quotes are costing you <span class="rust">thousands.</span></h1>
       <p class="lede">
-        Foremann watches every quote, nudges you when one goes quiet, and
-        writes the follow-up in your voice. You tap send.
+        Foremann writes every reply in your voice and, on Pro, nudges you when
+        a conversation goes quiet. You tap send.
       </p>
       <div class="hero-ctas">
         <a href="https://app.foremann.app/signup?plan=starter" class="btn btn-primary">Get your business number</a>
@@ -78,7 +78,7 @@ import StoreLinks from '../components/StoreLinks.astro';
 
         <!-- Get paid for the quotes you already sent -->
         <div class="card feat-card">
-          <div class="num">Smart Follow-ups</div>
+          <div class="num">Smart Follow-ups · Pro</div>
           <h3>Get paid for the quotes you already sent</h3>
           <div class="feat-visual">
             <div class="fv-bubble fv-out">Sent you the quote, let me know!</div>
@@ -88,22 +88,21 @@ import StoreLinks from '../components/StoreLinks.astro';
               <span class="fv-ai-msg">Hey, wanted to check in on that quote. Any questions?</span>
             </div>
           </div>
-          <p>When a quote goes quiet, Foremann writes the check-in. No more money sitting in forgotten threads.</p>
+          <p>When you've texted a quote and heard nothing back, Foremann nudges you and writes the check-in. No more money sitting in forgotten threads.</p>
         </div>
 
         <!-- Know who's texting before you read the thread -->
         <div class="card feat-card">
-          <div class="num">AI Summaries</div>
+          <div class="num">AI Summaries · Pro</div>
           <h3>Know who's texting before you read the thread</h3>
           <div class="feat-visual">
             <div class="fv-sum-label">Client Summary</div>
             <div class="fv-sum-row">
               <span class="fv-sum-name">Tom Braxton</span>
-              <span class="fv-sum-meta">14 jobs · $5,200</span>
             </div>
             <div class="fv-sum-text">Wants gutters cleaned before rain season. Quoted $180. Waiting on his schedule. Prefers weekend mornings.</div>
           </div>
-          <p>Two sentences at the top of every thread: who they are, what they want, what's next.</p>
+          <p>Tap the summary at the top of a thread: who they are, what they want, what's next.</p>
         </div>
 
         <!-- The reply's already written. You just send it. -->
@@ -192,8 +191,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           <ul class="price-features">
             <li>One business number</li>
             <li>200 AI replies to incoming texts / month</li>
-            <li>Auto follow-ups on stale quotes</li>
-            <li>AI summaries of long threads</li>
+            <li>Voicemail with transcripts</li>
             <li>Unlimited inbound SMS</li>
             <li>iPhone &amp; Android app</li>
           </ul>
@@ -211,6 +209,8 @@ import StoreLinks from '../components/StoreLinks.astro';
           <ul class="price-features">
             <li>Everything in Starter</li>
             <li>600 AI replies to incoming texts / month</li>
+            <li>Follow-up nudges on quiet conversations</li>
+            <li>AI summaries of client threads</li>
             <li>Priority support</li>
             <li>Lead-source integrations as they ship</li>
           </ul>
@@ -262,8 +262,8 @@ import StoreLinks from '../components/StoreLinks.astro';
 
       <div class="steps">
         <div class="step">
-          <h3>Calls connect right away</h3>
-          <p>The moment you sign up, your number can take calls. Today, callers are asked to text you instead — that's where your follow-ups and AI drafts actually live. Ringing straight to your phone and voicemail are coming soon.</p>
+          <h3>Voicemail works right away</h3>
+          <p>The moment you sign up, callers can leave a voicemail. It's transcribed and lands in your conversation with that client. Ringing straight to your phone is coming soon.</p>
         </div>
         <div class="step">
           <h3>Texting activates after a quick carrier check</h3>
@@ -303,7 +303,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <details class="faq-item">
           <summary class="faq-q">Does the AI text my clients automatically?</summary>
           <div class="faq-a">
-            <p>No. You always review before anything sends. The AI writes a draft in your voice. You read it, edit if needed, and hit send. Your clients always hear from you, not a bot.</p>
+            <p>Not replies. The AI writes a draft in your voice and you read it, edit it if needed, and tap send. Two optional features do send on their own: the after-hours auto-reply (off until you turn it on) sends one short canned message when someone texts outside your business hours, and on Pro, review requests (off until you turn them on and add your review link) go out automatically after you mark a job done.</p>
           </div>
         </details>
 
@@ -345,7 +345,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <details class="faq-item">
           <summary class="faq-q">Why can't I text right away?</summary>
           <div class="faq-a">
-            <p>US carriers require every business phone number to clear a one-time registration called 10DLC before it can send texts — that's true for every business texting platform, not just Foremann. Your business line works for calls the moment you sign up. Your registration is submitted automatically at signup and usually clears in 3–7 business days; we'll notify you the moment texting (including AI drafts) goes live.</p>
+            <p>US carriers require every business phone number to clear a one-time registration called 10DLC before it can send texts — that's true for every business texting platform, not just Foremann. Callers can leave you a voicemail the moment you sign up. Your registration is submitted automatically at signup and usually clears in 3–7 business days; we'll notify you the moment texting (including AI drafts) goes live.</p>
           </div>
         </details>
 
@@ -373,7 +373,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <details class="faq-item">
           <summary class="faq-q">What's coming next?</summary>
           <div class="faq-a">
-            <p>Full calling — ringing straight to your phone, voicemail with transcripts — then scheduling, quotes, and invoices. We started with texts because that's where contractors lose the most money right now.</p>
+            <p>Ringing calls straight to your phone, then scheduling, quotes, and invoices. We started with texts because that's where contractors lose the most money right now.</p>
           </div>
         </details>
 
@@ -403,7 +403,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           {
             "@type": "Question",
             "name": "Does the AI text my clients automatically?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. You always review before anything sends. The AI writes a draft in your voice. You read it, edit if needed, and hit send. Your clients always hear from you, not a bot." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Not replies. The AI writes a draft in your voice and you read it, edit it if needed, and tap send. Two optional features do send on their own: the after-hours auto-reply (off until you turn it on) sends one short canned message when someone texts outside your business hours, and on Pro, review requests (off until you turn them on and add your review link) go out automatically after you mark a job done." }
           },
           {
             "@type": "Question",
@@ -433,7 +433,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           {
             "@type": "Question",
             "name": "Why can't I text right away?",
-            "acceptedAnswer": { "@type": "Answer", "text": "US carriers require every business phone number to clear a one-time registration called 10DLC before it can send texts — that's true for every business texting platform, not just Foremann. Your business line works for calls the moment you sign up. Your registration is submitted automatically at signup and usually clears in 3–7 business days; we'll notify you the moment texting (including AI drafts) goes live." }
+            "acceptedAnswer": { "@type": "Answer", "text": "US carriers require every business phone number to clear a one-time registration called 10DLC before it can send texts — that's true for every business texting platform, not just Foremann. Callers can leave you a voicemail the moment you sign up. Your registration is submitted automatically at signup and usually clears in 3–7 business days; we'll notify you the moment texting (including AI drafts) goes live." }
           },
           {
             "@type": "Question",
@@ -453,7 +453,7 @@ import StoreLinks from '../components/StoreLinks.astro';
           {
             "@type": "Question",
             "name": "What's coming next?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Full calling — ringing straight to your phone, voicemail with transcripts — then scheduling, quotes, and invoices. We started with texts because that's where contractors lose the most money right now." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Ringing calls straight to your phone, then scheduling, quotes, and invoices. We started with texts because that's where contractors lose the most money right now." }
           },
           {
             "@type": "Question",
