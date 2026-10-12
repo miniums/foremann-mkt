@@ -1,0 +1,31 @@
+name: Verify public claims
+
+# Pricing/feature copy must stay true of the app. This checks the claims in
+# src/data/claims.json against the app's GET /api/v1/_meta/plans (ENTITLEMENTS).
+# Daily + on demand, because drift can come from an APP-side change while this
+# repo sits untouched; also on PRs that touch the claims, the pages, or this check.
+# See the app repo's docs/PUBLIC_CLAIMS.md.
+on:
+  schedule:
+    - cron: '17 13 * * *'   # daily, ~9:17am ET
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/data/claims.json'
+      - 'src/pages/**'
+      - 'src/layouts/**'
+      - 'scripts/verify-claims*'
+      - '.github/workflows/verify-claims.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run test:claims
+      # --strict: on this job an unreachable API is a failure too (a silent
+      # "couldn't check" is how drift hides). `npm run build` stays lenient.
+      - run: node scripts/verify-claims.mjs --strict
