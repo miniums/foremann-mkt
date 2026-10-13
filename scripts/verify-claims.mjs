@@ -3,7 +3,7 @@
 //
 //   node scripts/verify-claims.mjs [--source <url|file.json>] [--strict]
 //
-// Fetches GET /api/v1/_meta/plans (default https://app.foremann.app/api/v1/_meta/plans,
+// Fetches GET /api/v1/_meta/plans (default https://foremann-production.up.railway.app/api/v1/_meta/plans,
 // override with --source or $CLAIMS_SOURCE — a local file works for testing),
 // then checks every `verify` rule in src/data/claims.json plus every
 // `{/* claim: <id> */}` annotation in the site source.
@@ -17,7 +17,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const DEFAULT_SOURCE = 'https://app.foremann.app/api/v1/_meta/plans';
+const DEFAULT_SOURCE = 'https://foremann-production.up.railway.app/api/v1/_meta/plans';
 
 const asArray = (v) => (Array.isArray(v) ? v : v == null ? [] : [v]);
 const onFeatures = (p) => Object.entries(p.features || {}).filter(([, v]) => v).map(([k]) => k);
