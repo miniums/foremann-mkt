@@ -54,7 +54,7 @@ const SIGNUP = 'https://app.foremann.app/signup?plan=starter&src=mi';
       </div>
       <script is:inline>
         (function () {
-          fetch('https://app.foremann.app/api/v1/_meta/founding-status')
+          fetch('https://foremann-production.up.railway.app/api/v1/_meta/founding-status')
             .then(function (r) { return r.ok ? r.json() : null; })
             .then(function (data) {
               if (!data) return;
