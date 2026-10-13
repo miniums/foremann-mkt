@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/verify-claims.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "verify:claims": "node scripts/verify-claims.mjs",
+    "test:claims": "node --test scripts/"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1",

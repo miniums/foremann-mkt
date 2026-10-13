@@ -21,6 +21,18 @@ that backs it.
   (e.g. a job-total chip) must not appear as if real.
 - Don't touch pricing/billing claims without Bo ("no trial", founding offer).
 
+## Claims are verified, not just reviewed
+
+The pricing-card bullets are rendered from `src/data/claims.json`; each has a
+`verify` rule checked against the app's `GET /api/v1/_meta/plans`
+(`ENTITLEMENTS`). `npm run build` runs `scripts/verify-claims.mjs` first and
+**fails if a claim is false** (an unreachable API only warns), and a daily
+GitHub Action runs it `--strict`. To change a bullet, edit `claims.json` — the
+number lives in the `verify` rule, `{value}` in the text. `static` bullets can't
+be checked and print as UNVERIFIED. Prose (hero/FAQ) that depends on a gate
+carries a `{/* claim: <id> */}` comment pointing at a `prose` entry. Prices are
+not in here — still review-only. Tests: `npm run test:claims`.
+
 ## Paired PRs
 
 Any app PR that changes user-visible behavior or entitlements has a
@@ -31,7 +43,8 @@ ahead of the app change it describes, except when it only *removes* a claim.
 ## Before you push
 
 ```bash
-npm run build   # must pass; no other CI here
+npm run test:claims   # the verifier's own tests
+npm run build         # runs the claims verifier, then the Astro build
 ```
 
 Update the "last verified" date for any claim you touched in the app repo's

@@ -4,6 +4,16 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import PhonePreview from '../components/PhonePreview.astro';
 import StoreLinks from '../components/StoreLinks.astro';
+import claims from '../data/claims.json';
+
+// Pricing-card bullets are RENDERED from src/data/claims.json so the copy and the
+// rule that verifies it (scripts/verify-claims.mjs) cannot drift apart. `{value}`
+// is filled from the bullet's first `limit` rule, so a number lives in one place.
+const bulletText = (b) => {
+  const rules = Array.isArray(b.verify) ? b.verify : [b.verify];
+  const limit = rules.find((r) => r && r.type === 'limit');
+  return limit ? b.text.replace('{value}', limit.equals.toLocaleString('en-US')) : b.text;
+};
 ---
 <Layout>
   <Nav />
@@ -189,13 +199,9 @@ import StoreLinks from '../components/StoreLinks.astro';
           </div>
           <div class="price-annual">Founding customers: $39/mo, locked in for life</div>
           <ul class="price-features">
-            <li>One business number</li>
-            <li>200 AI replies to incoming texts / month</li>
-            <li>Follow-up nudges on quiet conversations (up to 100 / month)</li>
-            <li>AI summaries of client threads, on tap</li>
-            <li>Voicemail with transcript, summary and a drafted callback text</li>
-            <li>Unlimited inbound SMS</li>
-            <li>iPhone &amp; Android app</li>
+            {claims.plans.starter.bullets.map((b) => (
+              <li>{bulletText(b)}</li>
+            ))}
           </ul>
           <a href="https://app.foremann.app/signup?plan=starter" class="btn btn-secondary price-cta">Get your business number</a>
         </div>
@@ -209,11 +215,9 @@ import StoreLinks from '../components/StoreLinks.astro';
             <span class="price-period">/ mo</span>
           </div>
           <ul class="price-features">
-            <li>Everything in Starter</li>
-            <li>600 AI replies to incoming texts / month</li>
-            <li>Up to 200 follow-up nudges / month</li>
-            <li>Priority support</li>
-            <li>Lead-source integrations as they ship</li>
+            {claims.plans.pro.bullets.map((b) => (
+              <li>{bulletText(b)}</li>
+            ))}
           </ul>
           <a href="https://app.foremann.app/signup?plan=pro" class="btn btn-primary price-cta">Get your business number</a>
         </div>
@@ -304,6 +308,7 @@ import StoreLinks from '../components/StoreLinks.astro';
         <details class="faq-item">
           <summary class="faq-q">Does the AI text my clients automatically?</summary>
           <div class="faq-a">
+            {/* claim: prose.followups-every-plan, prose.review-requests-pro */}
             <p>No. The AI writes a draft in your voice, including follow-ups (and review requests on Pro), and you read it, edit it if needed, and tap send. The one exception is optional: the after-hours auto-reply (off until you turn it on) sends a single short canned message when someone texts outside your business hours.</p>
           </div>
         </details>

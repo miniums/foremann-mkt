@@ -1,0 +1,46 @@
+{
+  "_readme": "Single source of truth for the checkable public claims. The pricing cards in src/pages/index.astro are RENDERED from `plans.*.bullets`; scripts/verify-claims.mjs checks every `verify` rule against the app's GET /api/v1/_meta/plans (ENTITLEMENTS). `{value}` in text is filled from the first `limit` rule, so a number lives in exactly one place. `static` = cannot be checked against entitlements (listed as UNVERIFIED in the verifier output). Prices are NOT here: they live in Stripe/App Store Connect and are guarded by review. See the app repo's docs/PUBLIC_CLAIMS.md.",
+  "plans": {
+    "starter": {
+      "bullets": [
+        { "id": "starter.business-number", "text": "One business number", "verify": { "type": "static", "why": "number provisioning is not an entitlement" } },
+        { "id": "starter.ai-replies", "text": "{value} AI replies to incoming texts / month", "verify": { "type": "limit", "key": "aiSuggestionsPerMonth", "equals": 200 } },
+        { "id": "starter.nudges", "text": "Follow-up nudges on quiet conversations (up to {value} / month)", "verify": [
+          { "type": "limit", "key": "proactiveNudgesPerMonth", "equals": 100 },
+          { "type": "feature", "key": "aiFollowUpScanner", "enabled": true }
+        ] },
+        { "id": "starter.summaries", "text": "AI summaries of client threads, on tap", "verify": { "type": "feature", "key": "aiClientSummary", "enabled": true } },
+        { "id": "starter.voicemail-ai", "text": "Voicemail with transcript, summary and a drafted callback text", "verify": { "type": "static", "why": "voicemail AI is on every plan within the reply quota; not an entitlement flag" } },
+        { "id": "starter.inbound-sms", "text": "Unlimited inbound SMS", "verify": { "type": "static", "why": "inbound is not metered; no entitlement field" } },
+        { "id": "starter.apps", "text": "iPhone & Android app", "verify": { "type": "static", "why": "store availability" } }
+      ]
+    },
+    "pro": {
+      "bullets": [
+        { "id": "pro.everything-in-starter", "text": "Everything in Starter", "verify": { "type": "superset", "of": "starter" } },
+        { "id": "pro.ai-replies", "text": "{value} AI replies to incoming texts / month", "verify": { "type": "limit", "key": "aiSuggestionsPerMonth", "equals": 600 } },
+        { "id": "pro.nudges", "text": "Up to {value} follow-up nudges / month", "verify": { "type": "limit", "key": "proactiveNudgesPerMonth", "equals": 200 } },
+        { "id": "pro.priority-support", "text": "Priority support", "verify": { "type": "static", "why": "a service promise, not an entitlement" } },
+        { "id": "pro.lead-integrations", "text": "Lead-source integrations as they ship", "verify": { "type": "static", "why": "forward-looking; no entitlement" } }
+      ]
+    }
+  },
+  "prose": [
+    {
+      "id": "prose.review-requests-pro",
+      "says": "FAQ: the AI drafts review requests \"on Pro\" (not Starter).",
+      "verify": [
+        { "type": "feature", "plan": "pro", "key": "aiReviewRequests", "enabled": true },
+        { "type": "feature", "plan": "starter", "key": "aiReviewRequests", "enabled": false }
+      ]
+    },
+    {
+      "id": "prose.followups-every-plan",
+      "says": "FAQ/pricing: AI-drafted follow-ups are available on Starter as well as Pro.",
+      "verify": [
+        { "type": "feature", "plan": "starter", "key": "aiFollowUpScanner", "enabled": true },
+        { "type": "feature", "plan": "pro", "key": "aiFollowUpScanner", "enabled": true }
+      ]
+    }
+  ]
+}
